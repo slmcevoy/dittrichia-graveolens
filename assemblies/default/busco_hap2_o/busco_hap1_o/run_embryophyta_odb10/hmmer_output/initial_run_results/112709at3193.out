@@ -1,0 +1,16 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+h1tg000009l:16502022-16503779 -            586 112709at3193         -            450  2.4e-211  701.1  28.7   1   3  2.7e-191  1.9e-187  622.2   8.6     4   358    67   439    64   441 0.93 -
+h1tg000009l:16502022-16503779 -            586 112709at3193         -            450  2.4e-211  701.1  28.7   2   3   8.3e-10   5.9e-06   24.0  15.2   337   409   435   508   428   512 0.61 -
+h1tg000009l:16502022-16503779 -            586 112709at3193         -            450  2.4e-211  701.1  28.7   3   3   2.4e-22   1.7e-18   65.3   1.0   367   449   490   580   485   581 0.86 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/112709at3193.hmm
+# Target file:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas
+# Option settings: hmmsearch --domtblout /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/hmmer_output/initial_run_results/112709at3193.out --cpu 1 /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/112709at3193.hmm /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas 
+# Current dir:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default
+# Date:            Mon Oct 17 13:48:28 2022
+# [ok]

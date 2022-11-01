@@ -1,0 +1,21 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+h1tg000009l:13446612-13452460 -            986 12744at3193          -            785  1.6e-250  832.3  22.2   1   2   2.1e-92   3.7e-89  298.7   1.2     1   304    24   366    24   379 0.89 -
+h1tg000009l:13446612-13452460 -            986 12744at3193          -            785  1.6e-250  832.3  22.2   2   2    5e-164    9e-161  535.5  13.9   309   785   396   980   381   980 0.82 -
+h1tg000005l:2526662-2532555   -            777 12744at3193          -            785     5e-11   40.3   0.3   1   2   1.2e-07   0.00022   18.3   0.0   491   568   198   280   191   293 0.79 -
+h1tg000005l:2526662-2532555   -            777 12744at3193          -            785     5e-11   40.3   0.3   2   2   4.5e-08   8.1e-05   19.8   0.3   627   753   363   481   355   511 0.80 -
+h1tg000016l:39071626-39074932 -            550 12744at3193          -            785   0.00014   18.9   0.1   1   2   4.8e-07   0.00086   16.4   0.0   509   583   168   253   160   265 0.82 -
+h1tg000016l:39071626-39074932 -            550 12744at3193          -            785   0.00014   18.9   0.1   2   2     0.039        70    0.1   0.0   626   642   340   356   321   465 0.70 -
+h1tg000014l:14625665-14626969 -            435 12744at3193          -            785    0.0051   13.8   1.8   1   2   3.1e-06    0.0056   13.7   0.2    53   146    90   184    86   198 0.80 -
+h1tg000014l:14625665-14626969 -            435 12744at3193          -            785    0.0051   13.8   1.8   2   2      0.11   1.9e+02   -1.3   0.1   371   419   306   357   260   384 0.54 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/12744at3193.hmm
+# Target file:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas
+# Option settings: hmmsearch --domtblout /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/hmmer_output/initial_run_results/12744at3193.out --cpu 1 /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/12744at3193.hmm /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas 
+# Current dir:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default
+# Date:            Mon Oct 17 13:48:27 2022
+# [ok]

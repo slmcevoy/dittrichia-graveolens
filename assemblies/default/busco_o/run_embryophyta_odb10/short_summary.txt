@@ -1,0 +1,24 @@
+# BUSCO version is: 5.4.3 
+# The lineage dataset is: embryophyta_odb10 (Creation date: 2020-09-10, number of genomes: 50, number of BUSCOs: 1614)
+# Summarized benchmarking in BUSCO notation for file /public/groups/meyerlab/ditt/assemblies/hifiasm/default/ditt_contamfiltered_hifiasm.asm.bp.p_ctg.fa
+# BUSCO was run in mode: euk_genome_met
+# Gene predictor used: metaeuk
+
+	***** Results: *****
+
+	C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%,n:1614	   
+	1594	Complete BUSCOs (C)			   
+	1548	Complete and single-copy BUSCOs (S)	   
+	46	Complete and duplicated BUSCOs (D)	   
+	9	Fragmented BUSCOs (F)			   
+	11	Missing BUSCOs (M)			   
+	1614	Total BUSCO groups searched		   
+
+Assembly Statistics:
+
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	bbtools: 39.00
+	metaeuk: 6.a5d39d9
+	busco: 5.4.3

@@ -1,0 +1,23 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+h1tg000010l:57249931-57251334 -            468 121971at3193         -            333  7.1e-122  405.5  13.4   1   2   6.2e-06     0.009   14.0   0.1     1    19    13    31    13    32 0.93 -
+h1tg000010l:57249931-57251334 -            468 121971at3193         -            333  7.1e-122  405.5  13.4   2   2  5.1e-119  7.4e-116  385.7  10.0    14   333    48   460    44   460 0.85 -
+h1tg000009l:7115852-7117150   -            433 121971at3193         -            333   2.5e-34  117.7   6.2   1   2     0.015        22    2.9   0.1     4    19     1    16     1    20 0.92 -
+h1tg000009l:7115852-7117150   -            433 121971at3193         -            333   2.5e-34  117.7   6.2   2   2   2.2e-35   3.1e-32  110.8   3.1    16   332    34   433    22   433 0.71 -
+h1tg000004l:84155824-84157128 -            435 121971at3193         -            333   1.2e-32  112.2   7.2   1   1   1.8e-32   2.6e-29  101.2   7.2     5   332     2   435     1   435 0.70 -
+h1tg000018l:185360-186679     -            440 121971at3193         -            333     2e-31  108.1   9.1   1   2    0.0035       5.1    4.9   0.1     3    18     2    17     1    20 0.90 -
+h1tg000018l:185360-186679     -            440 121971at3193         -            333     2e-31  108.1   9.1   2   2   2.3e-31   3.3e-28   97.6   5.2    20   332    39   440    26   440 0.68 -
+h1tg000019l:10637538-10638842 -            435 121971at3193         -            333   2.4e-27   94.8   4.9   1   3   6.8e-05     0.098   10.6   0.1     1    20     2    21     2    23 0.93 -
+h1tg000019l:10637538-10638842 -            435 121971at3193         -            333   2.4e-27   94.8   4.9   2   3   5.7e-16   8.2e-13   47.0   0.0    19    96    45   145    37   157 0.84 -
+h1tg000019l:10637538-10638842 -            435 121971at3193         -            333   2.4e-27   94.8   4.9   3   3   2.4e-12   3.4e-09   35.1   1.7   193   332   278   433   268   434 0.73 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/121971at3193.hmm
+# Target file:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas
+# Option settings: hmmsearch --domtblout /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/hmmer_output/initial_run_results/121971at3193.out --cpu 1 /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/121971at3193.hmm /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas 
+# Current dir:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default
+# Date:            Mon Oct 17 13:48:28 2022
+# [ok]

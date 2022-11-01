@@ -1,0 +1,25 @@
+All statistics are based on contigs of size >= 3000 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                    ditt_contamfiltered_hifiasm.asm.bp.hap2.p_ctg
+# contigs (>= 0 bp)         53                                           
+# contigs (>= 1000 bp)      53                                           
+# contigs (>= 5000 bp)      53                                           
+# contigs (>= 10000 bp)     53                                           
+# contigs (>= 25000 bp)     52                                           
+# contigs (>= 50000 bp)     47                                           
+Total length (>= 0 bp)      812197022                                    
+Total length (>= 1000 bp)   812197022                                    
+Total length (>= 5000 bp)   812197022                                    
+Total length (>= 10000 bp)  812197022                                    
+Total length (>= 25000 bp)  812174870                                    
+Total length (>= 50000 bp)  811964670                                    
+# contigs                   53                                           
+Largest contig              102371341                                    
+Total length                812197022                                    
+GC (%)                      35.49                                        
+N50                         73257514                                     
+N90                         17621871                                     
+auN                         61545424.4                                   
+L50                         5                                            
+L90                         15                                           
+# N's per 100 kbp           0.00                                         

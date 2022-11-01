@@ -1,0 +1,20 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+h1tg000008l:76445024-76446296 -            309 138708at3193         -            255  2.9e-118  392.5   0.0   1   1  2.4e-121  3.5e-118  392.2   0.0     1   255    29   306    29   306 0.93 -
+h1tg000009l:23104701-23109112 -            379 138708at3193         -            255   2.6e-45  153.4   0.1   1   2   1.8e-32   2.5e-29  101.0   0.2     1   168    51   252    51   254 0.76 -
+h1tg000009l:23104701-23109112 -            379 138708at3193         -            255   2.6e-45  153.4   0.1   2   2   5.1e-16   7.3e-13   47.1   0.0   168   238   310   377   292   379 0.95 -
+h1tg000011l:1620823-1628472   -            441 138708at3193         -            255   1.3e-30  105.2   0.0   1   1   1.2e-31   1.7e-28   98.3   0.0     4   237   100   348    97   363 0.77 -
+h1tg000002l:70437420-70437803 -            128 138708at3193         -            255   2.1e-09   35.8   0.0   1   1   2.2e-12   3.1e-09   35.2   0.0     3   110     6   121     4   126 0.82 -
+h1tg000014l:10240553-10242850 -            766 138708at3193         -            255    0.0058   14.7   0.0   1   2       1.4     2e+03   -3.5   0.0   184   203   447   466   440   468 0.79 -
+h1tg000014l:10240553-10242850 -            766 138708at3193         -            255    0.0058   14.7   0.0   2   2   1.1e-05     0.016   13.2   0.0    25    78   583   637   574   655 0.86 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/138708at3193.hmm
+# Target file:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas
+# Option settings: hmmsearch --domtblout /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/hmmer_output/initial_run_results/138708at3193.out --cpu 1 /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_downloads/lineages/embryophyta_odb10/hmms/138708at3193.hmm /public/groups/meyerlab/ditt/assemblies/hifiasm/default/busco_hap1_o/run_embryophyta_odb10/metaeuk_output/initial_results/ditt_contamfiltered_hifiasm.asm.bp.hap1.p_ctg.fa.modified.fas 
+# Current dir:     /public/groups/meyerlab/ditt/assemblies/hifiasm/default
+# Date:            Mon Oct 17 13:48:27 2022
+# [ok]

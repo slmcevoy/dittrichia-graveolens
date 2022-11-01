@@ -1,0 +1,23 @@
+Assembly	ditt_contamfiltered_hifiasm_l0_omnic.asm.hic.hap2.p_ctg
+# contigs (>= 0 bp)	59
+# contigs (>= 1000 bp)	59
+# contigs (>= 5000 bp)	59
+# contigs (>= 10000 bp)	59
+# contigs (>= 25000 bp)	58
+# contigs (>= 50000 bp)	50
+Total length (>= 0 bp)	816698944
+Total length (>= 1000 bp)	816698944
+Total length (>= 5000 bp)	816698944
+Total length (>= 10000 bp)	816698944
+Total length (>= 25000 bp)	816676792
+Total length (>= 50000 bp)	816330198
+# contigs	59
+Largest contig	102416065
+Total length	816698944
+GC (%)	35.48
+N50	73257514
+N90	18663685
+auN	62606590.4
+L50	5
+L90	14
+# N's per 100 kbp	0.00

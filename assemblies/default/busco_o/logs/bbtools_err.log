@@ -1,0 +1,18 @@
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3537)
+	at java.base/java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:228)
+	at java.base/java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:740)
+	at java.base/java.lang.StringBuilder.append(StringBuilder.java:233)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:376)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at fileIO.FileFormat.getFirstOctet(FileFormat.java:450)
+	at fileIO.FileFormat.testInterleavedAndQuality(FileFormat.java:435)
+	at fileIO.FileFormat.testFormat(FileFormat.java:371)
+	at fileIO.FileFormat.<init>(FileFormat.java:220)
+	at fileIO.FileFormat.testInput(FileFormat.java:162)
+	at fileIO.FileFormat.testInput(FileFormat.java:144)
+	at jgi.AssemblyStats2.process(AssemblyStats2.java:260)
+	at jgi.AssemblyStats2.main(AssemblyStats2.java:40)
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "fileIO.FileFormat.samOrBam()" because "ff" is null
+	at jgi.AssemblyStats2.process(AssemblyStats2.java:267)
+	at jgi.AssemblyStats2.main(AssemblyStats2.java:40)

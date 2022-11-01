@@ -1,0 +1,75 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.1b2 (February 2015); http://hmmer.org/
+# Copyright (C) 2015 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygous/busco_downloads/lineages/embryophyta_odb10/hmms/46855at3193.hmm
+# target sequence database:        /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygous/busco_alt_o/run_embryophyta_odb10/metaeuk_output/rerun_results/ditt_contamfiltered_hifiasm_l0.asm.bp.a_ctg.fa.modified.fas
+# per-dom hits tabular output:     /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygous/busco_alt_o/run_embryophyta_odb10/hmmer_output/rerun_results/46855at3193.out
+# number of worker threads:        1
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       46855at3193  [M=673]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence               Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------               -----------
+    5.7e-33  108.5   9.5    1.6e-30  100.4   8.1    4.1  2  atg000043l:17162-18829  
+
+
+Domain annotation for each sequence (and alignments):
+>> atg000043l:17162-18829  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !    0.8   0.0    0.0064       2.2     128     164 ..      48      84 ..      29      92 .. 0.83
+   2 !  100.4   8.1   4.7e-33   1.6e-30      35     415 ..     116     508 ..     112     514 .. 0.84
+
+  Alignments for each domain:
+  == domain 1  score: 0.8 bits;  conditional E-value: 0.0064
+             46855at3193 128 FvYNvlisglckekrvkdAeklFdemlerkvvpnlvt 164
+                              ++N+++ +l ++ r     +lFd+m ++ ++ n +t
+  atg000043l:17162-18829  48 SIWNIVMRCLSQSDRPVFVLHLFDKMRDQGLMGNNLT 84 
+                             5789999999999999999999999999999988877 PP
+
+  == domain 2  score: 100.4 bits;  conditional E-value: 4.7e-33
+             46855at3193  35 lfsfsslllsvlaesklldealellsllkk.pslssnllLeslvslkrfektlelfseivg..irpdkftygKaiqaavklgdlkka 118
+                              + +s+ l+ ++a+   l+ + +++  + +   +s n ++    + ++++++l++f+++++  + pd++t  K i a++++gd + a
+  atg000043l:17162-18829 116 YLYVSNSLIHMYASCGRLECGKRVFDEMFDrDIVSWNSMICGYSQCNKYKEVLRIFDRLLEtnLTPDSVTMVKVILACINIGDKNIA 202
+                             67789999999999999999999998776515677899999999***************8622579*****************9999 PP
+
+             46855at3193 119 lellksmk.......vFvYNvlisglckekrvkdAeklFdemlerkvvpnlvtYNtlidGyckvGdlekafklrermkvepnlvtfn 198
+                              ++ k +k       v+  N li+   + + +  A+++Fd+m er+v    v++N +i  y k+Gdl++a kl ++m  ++ ++++ 
+  atg000043l:17162-18829 203 ESMAKYIKdnnimidVYLGNTLIDMHGRYGSMGLAREVFDQMKERNV----VSWNAMISVYAKAGDLNEARKLFDHMP-KRDVISWT 284
+                             9888654322222228999**************************87....68************************5.889***** PP
+
+             46855at3193 199 tLlsGLckakrmeeakkv.lemeskgfvpdgftysilfdg.lrsgdsas.lalfeeavkkgvkineytcsilLngLckeGkvekaee 282
+                             t+++G  + +++++a ++ l+m ++++ pd  t s ++    r g++++  ++++ + k+ ++ + y  + l++  ck G +eka +
+  atg000043l:17162-18829 285 TMITGYSQGDQLSNAMSIfLDMMKTNVKPDEITISNVLSVcARLGSVETgNSIHDYIRKNNIREDLYVGNALIDMYCKCGSTEKALK 371
+                             **************9987589*************98887615677766515677888999*************************** PP
+
+             46855at3193 283 vLkkl.venglvpteviyntlvdgycregdleieemesrglkpdcitynslinklcelk..eeaeelvkkme.ekgvspsvetyNiL 365
+                             v++++ v+  +  t++i    v+g + +    +++m  +++ p + t+  ++   ++++   e  e+++ m+ ++g++p+++ y  +
+  atg000043l:17162-18829 372 VFQEMeVKDSVSWTSIISGLAVNGNAISALDLFSKMLMKNIPPTHGTFVGILLACTHAGmvYEGLEYFESMKrDHGLQPEMKHYGCV 458
+                             **9983566777899999*******9999999****************9988777665511678899****83579*********99 PP
+
+             46855at3193 366 idgY...grfercfeileemeekglkpnvvsYgslinalckdgklleAeivle 415
+                             +d     g+++r+++++ +m    + p v+ +  l+ +   +g+++ Aei  +
+  atg000043l:17162-18829 459 VDLLsrsGNLDRAYDFMLQM---PIAPDVILWRILLSSCKLQGNMVLAEIATS 508
+                             88761115678888776655...688999998888877666777777877765 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (673 nodes)
+Target sequences:                          337  (126994 residues searched)
+Passed MSV filter:                        10  (0.0296736); expected 6.7 (0.02)
+Passed bias filter:                        7  (0.0207715); expected 6.7 (0.02)
+Passed Vit filter:                         2  (0.00593472); expected 0.3 (0.001)
+Passed Fwd filter:                         1  (0.00296736); expected 0.0 (1e-05)
+Initial search space (Z):                337  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.05u 0.01s 00:00:00.06 Elapsed: 00:00:00.06
+# Mc/sec: 1424.45
+//
+[ok]

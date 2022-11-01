@@ -1,0 +1,60 @@
+2022-10-12 12:19:33 INFO:	***** Start a BUSCO v5.4.3 analysis, current time: 10/12/2022 12:19:33 *****
+2022-10-12 12:19:33 INFO:	Configuring BUSCO with local environment
+2022-10-12 12:19:33 INFO:	Mode is genome
+2022-10-12 12:19:33 INFO:	Downloading information on latest versions of BUSCO data...
+2022-10-12 12:19:36 INFO:	Input file is /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygous/ditt_contamfiltered_hifiasm_l0.asm.bp.a_ctg.fa
+2022-10-12 12:19:39 INFO:	Running BUSCO using lineage dataset embryophyta_odb10 (eukaryota, 2020-09-10)
+2022-10-12 12:19:39 INFO:	Running 1 job(s) on bbtools, starting at 10/12/2022 12:19:39
+2022-10-12 12:19:44 INFO:	[bbtools]	1 of 1 task(s) completed
+2022-10-12 12:19:44 INFO:	Running 1 job(s) on metaeuk, starting at 10/12/2022 12:19:44
+2022-10-12 12:20:20 INFO:	[metaeuk]	1 of 1 task(s) completed
+2022-10-12 12:20:21 INFO:	***** Run HMMER on gene sequences *****
+2022-10-12 12:20:21 INFO:	Running 1614 job(s) on hmmsearch, starting at 10/12/2022 12:20:21
+2022-10-12 12:20:28 INFO:	[hmmsearch]	323 of 1614 task(s) completed
+2022-10-12 12:20:29 INFO:	[hmmsearch]	485 of 1614 task(s) completed
+2022-10-12 12:20:29 INFO:	[hmmsearch]	485 of 1614 task(s) completed
+2022-10-12 12:20:29 INFO:	[hmmsearch]	646 of 1614 task(s) completed
+2022-10-12 12:20:31 INFO:	[hmmsearch]	969 of 1614 task(s) completed
+2022-10-12 12:20:31 INFO:	[hmmsearch]	1130 of 1614 task(s) completed
+2022-10-12 12:20:31 INFO:	[hmmsearch]	1130 of 1614 task(s) completed
+2022-10-12 12:20:32 INFO:	[hmmsearch]	1292 of 1614 task(s) completed
+2022-10-12 12:20:32 INFO:	[hmmsearch]	1292 of 1614 task(s) completed
+2022-10-12 12:20:32 INFO:	[hmmsearch]	1453 of 1614 task(s) completed
+2022-10-12 12:20:33 INFO:	[hmmsearch]	1614 of 1614 task(s) completed
+2022-10-12 12:20:37 INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+2022-10-12 12:21:24 INFO:	Running 1 job(s) on metaeuk, starting at 10/12/2022 12:21:24
+2022-10-12 12:22:47 INFO:	[metaeuk]	1 of 1 task(s) completed
+2022-10-12 12:22:49 INFO:	***** Run HMMER on gene sequences *****
+2022-10-12 12:22:49 INFO:	Running 1606 job(s) on hmmsearch, starting at 10/12/2022 12:22:49
+2022-10-12 12:22:56 INFO:	[hmmsearch]	161 of 1606 task(s) completed
+2022-10-12 12:22:56 INFO:	[hmmsearch]	322 of 1606 task(s) completed
+2022-10-12 12:22:57 INFO:	[hmmsearch]	482 of 1606 task(s) completed
+2022-10-12 12:22:57 INFO:	[hmmsearch]	482 of 1606 task(s) completed
+2022-10-12 12:22:58 INFO:	[hmmsearch]	643 of 1606 task(s) completed
+2022-10-12 12:22:58 INFO:	[hmmsearch]	803 of 1606 task(s) completed
+2022-10-12 12:22:58 INFO:	[hmmsearch]	803 of 1606 task(s) completed
+2022-10-12 12:22:59 INFO:	[hmmsearch]	964 of 1606 task(s) completed
+2022-10-12 12:23:00 INFO:	[hmmsearch]	1285 of 1606 task(s) completed
+2022-10-12 12:23:01 INFO:	[hmmsearch]	1446 of 1606 task(s) completed
+2022-10-12 12:23:01 INFO:	[hmmsearch]	1606 of 1606 task(s) completed
+2022-10-12 12:23:05 INFO:	Validating exons and removing overlapping matches
+2022-10-12 12:23:05 INFO:	Results:	C:0.5%[S:0.5%,D:0.0%],F:0.1%,M:99.4%,n:1614	   
+
+2022-10-12 12:23:07 INFO:	
+
+	--------------------------------------------------
+	|Results from dataset embryophyta_odb10           |
+	--------------------------------------------------
+	|C:0.5%[S:0.5%,D:0.0%],F:0.1%,M:99.4%,n:1614      |
+	|8	Complete BUSCOs (C)                       |
+	|8	Complete and single-copy BUSCOs (S)       |
+	|0	Complete and duplicated BUSCOs (D)        |
+	|1	Fragmented BUSCOs (F)                     |
+	|1605	Missing BUSCOs (M)                        |
+	|1614	Total BUSCO groups searched               |
+	--------------------------------------------------
+2022-10-12 12:23:07 INFO:	BUSCO analysis done. Total running time: 211 seconds
+2022-10-12 12:23:07 INFO:	Results written in /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygous/busco_alt_o
+2022-10-12 12:23:07 INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
+2022-10-12 12:23:07 INFO:	Visit this page https://gitlab.com/ezlab/busco#how-to-cite-busco to see how to cite BUSCO

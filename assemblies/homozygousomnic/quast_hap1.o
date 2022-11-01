@@ -1,0 +1,53 @@
+/public/groups/meyerlab/software/quast-5.2.0/quast.py ditt_contamfiltered_hifiasm_l0_omnic.asm.hic.hap1.p_ctg.fa --large -o quast_hap1_o -t 12
+
+Version: 5.2.0, 3d87c606
+
+System information:
+  OS: Linux-3.10.0-1127.19.1.el7.x86_64-x86_64-with-glibc2.17 (linux_64)
+  Python version: 3.9.12
+  CPUs number: 64
+
+Started: 2022-10-13 09:37:31
+
+Logging to /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic/quast_hap1_o/quast.log
+
+CWD: /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic
+Main parameters: 
+  MODE: large, threads: 12, eukaryotic: true, min contig length: 3000, min alignment length: 500, \
+  min alignment IDY: 95.0, ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 7000
+
+WARNING: Can't draw plots: python-matplotlib is missing or corrupted.
+
+Contigs:
+  Pre-processing...
+  ditt_contamfiltered_hifiasm_l0_omnic.asm.hic.hap1.p_ctg.fa ==> ditt_contamfiltered_hifiasm_l0_omnic.asm.hic.hap1.p_ctg
+
+2022-10-13 09:38:11
+Running Basic statistics processor...
+  Contig files: 
+    ditt_contamfiltered_hifiasm_l0_omnic.asm.hic.hap1.p_ctg
+  Calculating N50 and L50...
+    ditt_contamfiltered_hifiasm_l0_omnic.asm.hic.hap1.p_ctg, N50 = 73662154, L50 = 5, auN = 63021710.3, Total length = 818877680, GC % = 35.49, # N's per 100 kbp =  0.00
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2022-10-13 09:39:21
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 1: Creating Icarus viewers...
+Done
+
+2022-10-13 09:39:36
+RESULTS:
+  Text versions of total report are saved to /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic/quast_hap1_o/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic/quast_hap1_o/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic/quast_hap1_o/report.html
+  Icarus (contig browser) is saved to /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic/quast_hap1_o/icarus.html
+  Log is saved to /public/groups/meyerlab/ditt/assemblies/hifiasm/homozygousomnic/quast_hap1_o/quast.log
+
+Finished: 2022-10-13 09:39:37
+Elapsed time: 0:02:06.021043
+NOTICEs: 1; WARNINGs: 1; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
