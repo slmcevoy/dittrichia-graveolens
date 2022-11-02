@@ -17,7 +17,7 @@ The full set of files including output data has been compressed and stored on re
 ### Assembly QC  
 
 Each assembly directory above also contains scripts used to evaluate the assembly and their report output.  
-Side by side stats comparisons are in the (Dittrichia tracking google sheet)[https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980]  
+Side by side stats comparisons are in the [Dittrichia tracking google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)  
 
 Quast v5.2.0  - quast.sh provides total length, number of contigs, and N50.  
 
