@@ -1,0 +1,126 @@
+name	taxID	taxRank	genomeSize	numReads	numUniqueReads	abundance
+Acinetobacter baumannii	470	species	4470189	21758	21676	0.0
+Enterobacteriaceae	543	family	12257242	1	0	0.0
+Klebsiella pneumoniae	573	species	15313680	1	1	0.0
+Cyanobacteria	1117	phylum	4890598	7	7	0.0
+Chroococcales	1118	order	4979926	2	0	0.0
+Synechococcus	1129	genus	2744871	1	0	0.0
+Synechocystis	1142	genus	3570073	1	0	0.0
+Synechocystis sp. PCC 6803	1148	species	3570073	6	0	0.0
+Oscillatoriales	1150	order	7831139	2	0	0.0
+Nostocales	1161	order	6778883	6	0	0.0
+Nostocaceae	1162	family	7733756	55	0	0.0
+Nostoc	1177	genus	9280782	1	0	0.0
+Rivulariaceae	1185	family	0	42	0	0.0
+Calothrix	1186	genus	0	56	0	0.0
+Prochlorococcus	1218	genus	1799150	1	0	0.0
+Micrococcus luteus	1270	species	4996790	1	1	0.0
+Enterococcus	1350	genus	3047471	1	0	0.0
+Enterococcus faecium	1352	species	2880142	125	8	0.0
+Bacillus	1386	genus	6486421	1	0	0.0
+Bacillus licheniformis	1402	species	8445242	1	1	0.0
+Clostridium	1485	genus	4671230	1	0	0.0
+Clostridium botulinum	1491	species	4218882	73	68	0.0
+Clostridium tetani	1513	species	2869591	42040	41963	0.0
+Lactiplantibacillus plantarum	1590	species	5352135	726	726	0.0
+Spiroplasma gladiatoris	2143	species	1164642	1	0	0.0
+Saccharomycetaceae	4893	family	10747628	1	0	0.0
+Pichia kudriavzevii	4909	species	10812555	2	0	0.0
+Brettanomyces bruxellensis	5007	species	13150648	6	6	0.0
+Sphingomonas paucimobilis	13689	species	20917910	4	0	0.0
+Gloeothece	28070	genus	7198058	270	0	0.0
+Synechococcus sp. PCC 7002	32049	species	3409935	2	0	0.0
+Lactobacillaceae	33958	family	3272674	2	0	0.0
+Rickettsia japonica	35790	species	1283087	57	57	0.0
+Mycoplasma mycoides subsp. capri	40477	subspecies	23810155	1	1	0.0
+Xenorhabdus bovienii	40576	species	4225498	1	0	0.0
+Rippkaea orientalis PCC 8801	41431	strain	4787694	43	0	0.0
+Zygotorulaspora mrakii	42260	species	10450160	1	0	0.0
+Hyphomicrobiaceae	45401	family	3894811	1	0	0.0
+Anabaena sp. 90	46234	species	5305675	2	0	0.0
+Borrelia miyamotoi	47466	species	937966	1	1	0.0
+Chroococcidiopsis thermalis	54299	species	6689401	1	0	0.0
+Gloeothece citriformis PCC 7424	65393	strain	6554169	10	5	0.0
+Treponema socranskii subsp. buccale	69713	subspecies	2866542	41	0	0.0
+Cylindrospermopsis	77021	genus	3957192	34	0	0.0
+Enterococcaceae	81852	family	2902732	1	0	0.0
+Pseudanabaena sp. PCC 7367	82654	species	4885680	122	119	0.0
+Gloeocapsa	102231	genus	0	2	0	0.0
+Leptolyngbya sp. PCC 7376	111781	species	5125950	7	0	0.0
+Tolypothrix	111782	genus	0	54	0	0.0
+Oscillatoria acuminata	118323	species	7804270	1	0	0.0
+Acaryochloris marina	155978	species	8361599	2	0	0.0
+Oscillatoria nigro-viridis PCC 7112	179408	strain	8272254	41	41	0.0
+Synechococcus sp. PCC 7117	195498	species	3432101	2	0	0.0
+Sphingomonadales	204457	order	4160862	1	0	0.0
+Entomoplasma luminosum	214888	species	1031560	1	0	0.0
+Spiroplasma corruscae	216934	species	1204639	1	0	0.0
+Spiroplasma litorale	216942	species	1225519	1	0	0.0
+Spiroplasma turonicum	216946	species	2522749	1	0	0.0
+Crinalium epipsammum	241425	species	5620407	2	0	0.0
+Chroococcidiopsis thermalis PCC 7203	251229	strain	6689401	5	0	0.0
+Dolichospermum flos-aquae CCAP 1403/13F	315271	strain	5220684	2	0	0.0
+Synechococcus sp. JA-3-3Ab	321327	species	2932766	362	360	0.0
+Synechococcus sp. JA-2-3B'a(2-13)	321332	species	3046682	6	0	0.0
+Candidatus Sulcia muelleri	336810	species	285352	138	55	0.0
+Synechococcus sp. PCC 7003	374981	species	3345085	2	0	0.0
+Synechococcus sp. PCC 73109	374982	species	3298676	2	0	0.0
+Cyanothece sp. PCC 7425	395961	species	5786110	6	0	0.0
+Rippkaea orientalis PCC 8802	395962	strain	4803347	43	0	0.0
+Sugiyamaella	410829	genus	0	1	0	0.0
+Ammonifex degensii KC4	429009	strain	2157067	1	1	0.0
+Candidatus Desulforudis audaxviator	471827	species	2349476	4	0	0.0
+Candidatus Desulforudis audaxviator MP104C	477974	strain	2349476	4	0	0.0
+Bacillus velezensis	492670	species	4031427	83	0	0.0
+Gloeothece verrucosa PCC 7822	497965	strain	7841948	19	7	0.0
+Thermothelomyces thermophilus ATCC 42464	573729	strain	38744216	221	2	0.0
+Thermothielavioides terrestris NRRL 8126	578455	strain	36912256	159	41	0.0
+Marivirga tractuosa DSM 4126	643867	strain	4516490	6	3	0.0
+Desulfobacula toluolica Tol2	651182	strain	5197905	1	1	0.0
+Candidatus Atelocyanobacterium thalassa	713887	species	1443806	269	0	0.0
+cyanobacterium endosymbiont of Epithemia turgida	718217	species	0	1	0	0.0
+Dolichospermum	748770	genus	5220684	34	0	0.0
+Treponema succinifaciens DSM 2489	869209	strain	2897425	41	0	0.0
+Chryseobacterium sp. StRB126	878220	species	5503743	1	0	0.0
+Novosphingobium sp. THN1	1016987	species	4649073	2	0	0.0
+Leptolyngbya sp. BL0902	1115757	species	4710209	273	0	0.0
+Thalassospira xiamenensis M-5 = DSM 17429	1123366	strain	4768950	1	1	0.0
+Glutamicibacter sp. ZJUTW	1155384	species	3673306	1	1	0.0
+Pichiaceae	1156497	family	0	1	0	0.0
+Calothrix sp. PCC 6303	1170562	species	6960392	1	0	0.0
+Gloeocapsa sp. PCC 7428	1173026	species	5882710	273	0	0.0
+cyanobacterium endosymbiont of Epithemia turgida isolate EtSB Lake Yunoko	1228987	forma	2794318	6	0	0.0
+Candidatus Liberibacter africanus PTSAPSY	1277257	strain	1192232	2	2	0.0
+Candidatus Atelocyanobacterium thalassa isolate ALOHA	1453429	leaf	1443806	42	37	0.0
+Nostoc edaphicum CCNP1411	1472755	strain	8316316	1	1	0.0
+Thermotoga caldifontis	1508419	species	2014912	5	0	0.0
+Thermotoga profunda	1508420	species	2187612	5	0	0.0
+Candida	1535326	genus	14618422	1	0	0.0
+Geminocystis sp. NIES-3708	1615909	species	4042078	1	0	0.0
+Geminocystis sp. NIES-3709	1617448	species	4426059	1	0	0.0
+Pseudothermotoga	1643951	genus	2668931	5	0	0.0
+Anabaena sp. WA102	1647413	species	5782034	81	0	0.0
+Thermoanaerosceptrum fracticalcis	1712410	species	3805411	4	0	0.0
+Fischerella sp. NIES-3754	1752063	species	5826863	3	0	0.0
+cyanobacterium endosymbiont of Rhopalodia gibberula	1763363	species	3020309	7	0	0.0
+Synechococcales	1890424	order	3311113	46	0	0.0
+Acaryochloridaceae	1890429	family	8361599	1	0	0.0
+Pseudanabaenaceae	1890436	family	0	1	0	0.0
+Aphanothecaceae	1890450	family	4916521	2	0	0.0
+Chroococcidiopsidaceae	1890528	family	6689401	5	0	0.0
+Microcoleaceae	1892252	family	7750108	2	0	0.0
+Aphanizomenonaceae	1892259	family	4630420	20	0	0.0
+Parageobacillus	1906945	genus	3658426	1	0	0.0
+Dolichospermum sp. UHCC 0315A	1914871	species	5642022	81	0	0.0
+Calothrix sp. NIES-3974	2005462	species	5985875	1	0	0.0
+Oxynema sp. AP17	2064643	species	6357750	2	1	0.0
+Synechocystis sp. IPPAS B-1465	2116702	species	3950993	6	0	0.0
+Erythrobacter aureus	2182384	species	3372129	1	0	0.0
+Crocosphaera subtropica	2546360	species	5460377	1	0	0.0
+Rippkaea orientalis	2546366	species	4795520	269	0	0.0
+Brevundimonas sp. Bb-A	2560058	species	3281994	1	1	0.0
+Nostoc sp. C052	2576902	species	9879831	2	2	0.0
+Nostoc sp. TCL26-01	2576904	species	7387676	6	1	0.0
+Spirosoma taeanense	2735870	species	5719932	1	0	0.0
+Streptomyces sp. CB00271	2750025	species	8309852	1	1	0.0
+Nostoc sp. UHCC 0702	2814655	species	8587404	5	0	0.0
