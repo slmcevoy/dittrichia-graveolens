@@ -23,11 +23,11 @@ Omni-C summaries coming...
 [Assembly trial results](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)  
 
 Total length: 819 Mbp  
-# contigs: 36  
-N50: 74 Mb  
-BUSCO: C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%  
+ # contigs: 36  
+ N50: 74 Mb  
+ BUSCO: C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%  
 
-#### Chloroplast filtering from draft
+#### Chloroplast filtering of draft
 
 [Tracking sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1445097887)  
 
