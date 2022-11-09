@@ -8,7 +8,7 @@ Manuscript link goes here - [Original template](https://github.com/slmcevoy/gavi
 
 ### Size estimation
 
-[K-mer based estimates](genome-size/kmer-distribution/README.md) - 831 Mbp, 53% repeats, and heterozygosity of 0.06.
+[K-mer based estimates](genome-size/README.md) - 831 Mbp, 53% repeats, and heterozygosity of 0.06.
 
 ### Sequencing
 
