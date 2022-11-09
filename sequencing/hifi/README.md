@@ -1,5 +1,8 @@
 ## HiFi Sequencing
 
+Raw reads are archived on redser4:
+ /redser4/raw/Meyer_Dittrichia_Hifi/m64069_220505_192103.hifi_reads.fastq.gz
+
 ### Raw reads quality control
 
 Raw reads were QC'd with FASTQC v0.11.8  
@@ -19,6 +22,9 @@ Centrifuge v1.0.4 was used to detect genes from archaea, bacteria, fungus, and v
 Script: centrifuge/centrifuge.sh  
 Contaminant report: centrifuge_abvf_index_ditt_report.tsv  
 Output fastq compressed and saved on redser4  
+
+Processed reads are archived on redser4:
+ /redser4/projects/dittrichia/hifireads/ditt_m64069_220505_192103.hifi_reads.filt.abvf.fastq.gz
 
 ### Trimmed and filtered read QC  
 
