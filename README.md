@@ -4,7 +4,7 @@
 
 [Data tracking google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g)
 
-Manuscript link goes here - [Original template](https://github.com/slmcevoy/gaviota-tarplant/blob/main/manuscript/GenomeResourceTemplateCCGP.docx)
+[Manuscript](https://docs.google.com/document/d/1MNmYusk89dXegETUHbGTfY9m631gyJSp/edit) - [Original template](https://github.com/slmcevoy/gaviota-tarplant/blob/main/manuscript/GenomeResourceTemplateCCGP.docx)
 
 ### Size estimation
 
@@ -31,5 +31,8 @@ Total length: 819 Mbp
 
 [Tracking sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1445097887)  
 
-Contig 36 and small section of Contig 05 match Limbarda crithmoides chloroplast assembly sequence.  
-Dittrichia chloroplast assembly still in progress.  
+Chloroplast assembly currently at 4 contigs.  Contig 36 removed from draft nuclear assembly most of its 90k bp were chloroplast.
+
+#### Scaffolding
+
+In progress...
