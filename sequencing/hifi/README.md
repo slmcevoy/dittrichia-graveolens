@@ -17,6 +17,11 @@ Results: raw_reads/longqc/
 HiFiAdapterFilt v2.0.1 was used to trim HiFi-specific adapters  
 Script: hifiadapterfilt/filt.sh  
 Stats output: hifiadapterfilt/m64069_220505_192103.hifi_reads.stats  
+```
+Number of ccs reads: 2433439
+Number of adapter contaminated ccs reads: 5 (0.000205471% of total)
+Number of ccs reads retained: 2433434 (99.9998% of total)
+```
 Reads archived: /redser4/projects/dittrichia/reads/hifi/adapter_filtered/ditt_hifiadapterfilt/m64069_220505_192103.hifi_reads.filt.fastq.gz
 
 ### Contaminant identification  (not used for filtering)
