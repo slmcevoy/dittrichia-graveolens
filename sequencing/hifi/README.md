@@ -24,6 +24,6 @@ Reads archived: /redser4/projects/dittrichia/reads/hifi/adapter_filtered/ditt_hi
 Centrifuge v1.0.4 was used to detect genes from archaea, bacteria, fungus, and virus. It uses an index built from taxonomy and sequencing in NCBI. Originally, I filtered these sequences with the python script remove_contams.py.  When doing the chloroplast assembly, it was incomplete and I discovered that this had filtered some those out.  I reverted to using the adapter-filtered set instead of this one.
 Script: centrifuge/centrifuge.sh  
 Contaminant report: centrifuge/centrifuge_abvf_index_ditt_report.tsv  
-Reads archived: /redser4/projects/dittrichia/reads/hifi/contam_filtered/ditt_m64069_220505_192103.hifi_reads.filt.abvf.fastq.gz
-FASTQC of contam-filtered reads: centrifuge/fastqc/
-LongQC of contam-filtered reads: centrifuge/longqc/  
+Reads archived: /redser4/projects/dittrichia/reads/hifi/contam_filtered/ditt_m64069_220505_192103.hifi_reads.filt.abvf.fastq.gz  
+FASTQC of contam-filtered reads: centrifuge/fastqc/  
+LongQC of contam-filtered reads: centrifuge/longqc/   
