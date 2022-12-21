@@ -1,5 +1,7 @@
 # Kmer analysis
 
+Files archived in /redser4/projects/dittrichia/genome_estimates  
+
 * KMC v3.1.1 with HiFi reads were used to create the histograms of kmer frequencies.  I useded kmers 21 with max coverage 500000.  There are two gits for KMC, and I used the following as recommended, to get the smudge_pairs command: https://github.com/tbenavi1/KMC
 
 * The visualization was plotted in Genomescope 2.0. (left column, below).
