@@ -8,5 +8,5 @@
 
 A list of links to all the Genomscope results is in the [google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=0)
 ### K21
-<img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/genome-size/dittrichia-genomescope1.png" height="325"> <img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/genome-size/smudgeplot_smudgeplot.png" height="325"> <img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/genome-size/smudgeplot_smudgeplot_log10.png" height="325">
+<img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/genome-size/dittrichia-genomescope-plot1.png" height="325"> <img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/genome-size/smudgeplot_smudgeplot.png" height="325"> <img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/genome-size/smudgeplot_smudgeplot_log10.png" height="325">
 http://genomescope.org/genomescope2.0/analysis.php?code=mDkWJUOlMNG2SAKLhx6U
