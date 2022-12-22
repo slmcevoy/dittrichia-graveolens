@@ -1,5 +1,7 @@
 ## HiFi Sequencing
 
+[HiFi sequence tracking sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=330784194)  
+
 Raw reads are archived on redser4:
  /redser4/raw/Meyer_Dittrichia_Hifi/m64069_220505_192103.hifi_reads.fastq.gz
 
