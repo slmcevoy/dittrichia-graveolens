@@ -1,0 +1,23 @@
+Assembly	ditt_adapterfilt_hifiasm_l0_omnic.asm.hic.hap1.p_ctg
+# contigs (>= 0 bp)	236
+# contigs (>= 1000 bp)	236
+# contigs (>= 5000 bp)	236
+# contigs (>= 10000 bp)	236
+# contigs (>= 25000 bp)	215
+# contigs (>= 50000 bp)	132
+Total length (>= 0 bp)	835177141
+Total length (>= 1000 bp)	835177141
+Total length (>= 5000 bp)	835177141
+Total length (>= 10000 bp)	835177141
+Total length (>= 25000 bp)	834718383
+Total length (>= 50000 bp)	831569642
+# contigs	236
+Largest contig	111114853
+Total length	835177141
+GC (%)	35.83
+N50	74911303
+N90	33974771
+auN	70777049.5
+L50	5
+L90	11
+# N's per 100 kbp	0.00
