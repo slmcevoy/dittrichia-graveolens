@@ -4,14 +4,14 @@
 
 The directories above contain four different HiFiasm assemblies (v0.16.1-r375) which are described below. In each directory, there is a script called hifiasm.sh which is the command to assemble. 
 
-####Selected draft assembly (contigs)  
+#### Selected draft assembly (contigs)  
 Created with adapter-filtered reads  
 
 hom_omnic_adapterfilt - uses -l0 to skip post-assembly haplotype organization and --h1/--h2 for phasing haplotypes with Omni-C reads.  
-Output files: ditt_adapterfilt_hifiasm_l0_omnic.asm.hic.hap1.p_ctg.fa, ditt_adapterfilt_hifiasm_l0_omnic.asm.hic.hap2.p_ctg.fa 
+Output files: ditt_adapterfilt_hifiasm_l0_omnic.asm.hic.hap1.p_ctg.fa, ditt_adapterfilt_hifiasm_l0_omnic.asm.hic.hap2.p_ctg.fa  
 Full output and QC files archived in: /redser4/projects/dittrichia/assemblies/hom_omnic_adapterfilt/hom_omnic_adapterfilt.tar.gz  
 
-####Test draft assemblies 
+#### Test draft assemblies  
 Created with adapter- and contaminant-filtered reads.  
 1. default - Testing the default parameters. This produces a haploid consensus assembly plus assemblies for each haplotype (hap1 and hap2).     
 2. homozygous - testing the -l0 parameter which can be used for homozygous genomes and skips the post-assembly haplotype filtering/organization seen in the default run. Normally this filtering is used to find undercollapsed haplotypes, where copies from both parents have been assembled into separate regions instead of collapsed into a consensus. A consensus haploid assembly plus a file with alternative haplotypes is produced.  The alternative haplotypes are fewer than in default, where haplotype organization helps expand the alternate.
@@ -23,7 +23,7 @@ The full set of files including output data has been compressed and stored on re
 2. /redser4/projects/dittrichia/assemblies/homozygous/dittrichia_hifiasm_homozygous.tar.gz
 3. /redser4/projects/dittrichia/assemblies/homozygousomnic/dittrichia_hifiasm_homozygousomnic.tar.gz
 
-###Draft assembly chloroplast filtering  
+### Draft assembly chloroplast filtering  
 
 BLAST v2.13.0 was used to map the Limbarda crithmoides chloroplast genome to the draft assembly for each haplotype. Contig 36 in the primary assembly and contig 37 in the alternate were identified as primarily chloroplast and removed.  
 Script: chloroplast_check/blast.sh, filterfasta.sh, headers_no_chloroplast.txt, headers_no_chloroplast_alt.txt  
@@ -35,7 +35,7 @@ Output: chloroplast_check/quast_hap1, quast_hap2, busco_hap1_o, busco_hap2_o
 
 Draft fasta archived in /redser4/projects/dittrichia/reads/hifi/chloroplast_check/  
 
-###Assembly QC  
+### Assembly QC  
 
 Each assembly directory above also contains scripts used to evaluate the assembly and their report output.  
 Side by side stats comparisons are in the [Dittrichia tracking google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)  
