@@ -1,0 +1,59 @@
+2022-12-16 14:31:59 INFO:	***** Start a BUSCO v5.4.3 analysis, current time: 12/16/2022 14:31:59 *****
+2022-12-16 14:31:59 INFO:	Configuring BUSCO with local environment
+2022-12-16 14:31:59 INFO:	Mode is genome
+2022-12-16 14:31:59 INFO:	Downloading information on latest versions of BUSCO data...
+2022-12-16 14:32:02 INFO:	Input file is /public/groups/meyerlab/ditt/scaffolding2-alt/3ddna/dittrichia_adapterfilt_draft_asm_alt_wrapped.FINAL.fasta
+2022-12-16 14:32:09 INFO:	Running BUSCO using lineage dataset embryophyta_odb10 (eukaryota, 2020-09-10)
+2022-12-16 14:32:09 INFO:	Running 1 job(s) on bbtools, starting at 12/16/2022 14:32:09
+2022-12-16 14:32:21 INFO:	[bbtools]	1 of 1 task(s) completed
+2022-12-16 14:32:21 INFO:	Running 1 job(s) on metaeuk, starting at 12/16/2022 14:32:21
+2022-12-16 15:05:02 INFO:	[metaeuk]	1 of 1 task(s) completed
+2022-12-16 15:05:22 INFO:	***** Run HMMER on gene sequences *****
+2022-12-16 15:05:22 INFO:	Running 1614 job(s) on hmmsearch, starting at 12/16/2022 15:05:22
+2022-12-16 15:05:32 INFO:	[hmmsearch]	162 of 1614 task(s) completed
+2022-12-16 15:05:34 INFO:	[hmmsearch]	323 of 1614 task(s) completed
+2022-12-16 15:05:36 INFO:	[hmmsearch]	485 of 1614 task(s) completed
+2022-12-16 15:05:39 INFO:	[hmmsearch]	646 of 1614 task(s) completed
+2022-12-16 15:05:43 INFO:	[hmmsearch]	808 of 1614 task(s) completed
+2022-12-16 15:05:57 INFO:	[hmmsearch]	969 of 1614 task(s) completed
+2022-12-16 15:06:12 INFO:	[hmmsearch]	1130 of 1614 task(s) completed
+2022-12-16 15:06:24 INFO:	[hmmsearch]	1292 of 1614 task(s) completed
+2022-12-16 15:06:38 INFO:	[hmmsearch]	1453 of 1614 task(s) completed
+2022-12-16 15:07:45 INFO:	[hmmsearch]	1614 of 1614 task(s) completed
+2022-12-16 15:07:59 INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+2022-12-16 15:08:04 INFO:	Running 1 job(s) on metaeuk, starting at 12/16/2022 15:08:04
+2022-12-16 15:48:32 INFO:	[metaeuk]	1 of 1 task(s) completed
+2022-12-16 15:48:34 INFO:	***** Run HMMER on gene sequences *****
+2022-12-16 15:48:34 INFO:	Running 28 job(s) on hmmsearch, starting at 12/16/2022 15:48:34
+2022-12-16 15:48:38 INFO:	[hmmsearch]	6 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	9 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	9 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	12 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	14 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	17 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	20 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	23 of 28 task(s) completed
+2022-12-16 15:48:38 INFO:	[hmmsearch]	23 of 28 task(s) completed
+2022-12-16 15:48:45 INFO:	[hmmsearch]	26 of 28 task(s) completed
+2022-12-16 15:48:48 INFO:	[hmmsearch]	28 of 28 task(s) completed
+2022-12-16 15:49:05 INFO:	Validating exons and removing overlapping matches
+2022-12-16 15:49:57 INFO:	Results:	C:98.6%[S:95.7%,D:2.9%],F:0.6%,M:0.8%,n:1614	   
+
+2022-12-16 15:50:38 INFO:	
+
+	--------------------------------------------------
+	|Results from dataset embryophyta_odb10           |
+	--------------------------------------------------
+	|C:98.6%[S:95.7%,D:2.9%],F:0.6%,M:0.8%,n:1614     |
+	|1592	Complete BUSCOs (C)                       |
+	|1545	Complete and single-copy BUSCOs (S)       |
+	|47	Complete and duplicated BUSCOs (D)        |
+	|9	Fragmented BUSCOs (F)                     |
+	|13	Missing BUSCOs (M)                        |
+	|1614	Total BUSCO groups searched               |
+	--------------------------------------------------
+2022-12-16 15:50:38 INFO:	BUSCO analysis done. Total running time: 4715 seconds
+2022-12-16 15:50:38 INFO:	Results written in /public/groups/meyerlab/ditt/scaffolding2-alt/3ddna/busco_o
+2022-12-16 15:50:38 INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
+2022-12-16 15:50:38 INFO:	Visit this page https://gitlab.com/ezlab/busco#how-to-cite-busco to see how to cite BUSCO

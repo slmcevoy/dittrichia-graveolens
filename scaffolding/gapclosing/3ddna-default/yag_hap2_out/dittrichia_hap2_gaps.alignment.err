@@ -1,0 +1,228 @@
+Alignment error output.================================================================================
+MAFFT	0:00:00.748086
+Input: 
+nthread = 0
+stacksize: 8192 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+
+
+Making a distance matrix ..
+
+    1 / 28
+done.
+
+Constructing a UPGMA tree (efffree=0) ... 
+
+    0 / 28
+   10 / 28
+   20 / 28
+done.
+
+Progressive alignment 1/2... 
+
+STEP     1 / 27 f
+STEP     2 / 27 d
+STEP     3 / 27 d
+STEP     4 / 27 d
+STEP     5 / 27 d
+STEP     6 / 27 d
+STEP     7 / 27 d
+STEP     8 / 27 d
+STEP     9 / 27 d
+STEP    10 / 27 d
+STEP    11 / 27 d
+STEP    12 / 27 d
+STEP    13 / 27 d
+STEP    14 / 27 d
+STEP    15 / 27 d
+STEP    16 / 27 d
+STEP    17 / 27 d
+STEP    18 / 27 d
+STEP    19 / 27 d
+STEP    20 / 27 d
+STEP    21 / 27 d
+STEP    22 / 27 d
+STEP    23 / 27 d
+STEP    24 / 27 d
+STEP    25 / 27 d
+STEP    26 / 27 d
+STEP    27 / 27 d
+done.
+
+Making a distance matrix from msa.. 
+
+    0 / 28
+done.
+
+Constructing a UPGMA tree (efffree=1) ... 
+
+    0 / 28
+   10 / 28
+   20 / 28
+done.
+
+Progressive alignment 2/2... 
+
+STEP     1 / 27 f
+STEP     2 / 27 d
+STEP     3 / 27 d
+STEP     4 / 27 d
+STEP     5 / 27 d
+STEP     6 / 27 d
+STEP     7 / 27 d
+STEP     8 / 27 d
+STEP     9 / 27 d
+STEP    10 / 27 d
+STEP    11 / 27 d
+STEP    12 / 27 d
+STEP    13 / 27 d
+STEP    14 / 27 d
+STEP    15 / 27 d
+STEP    16 / 27 d
+STEP    17 / 27 d
+STEP    18 / 27 d
+STEP    19 / 27 d
+STEP    20 / 27 d
+STEP    21 / 27 d
+STEP    22 / 27 d
+STEP    23 / 27 d
+STEP    24 / 27 d
+STEP    25 / 27 d
+STEP    26 / 27 d
+STEP    27 / 27 d
+done.
+
+disttbfast (nuc) Version 7.310 alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+0 thread(s)
+
+
+Strategy:
+ FFT-NS-2 (Fast but rough)
+ Progressive method (guide trees were built 2 times.)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+
+
+Output:/public/groups/meyerlab/ditt/gapclose/adapterfilt-default/yag_hap2_out/dittrichia_hap2_gaps.pre/SlPCgiUmlFc_2-56540579-56541079.fasta
+/public/groups/meyerlab/ditt/gapclose/adapterfilt-default/yag_hap2_out/dittrichia_hap2_gaps.msa/SlPCgiUmlFc_2-56540579-56541079.fasta
+================================================================================
+MAFFT	0:00:00.294509
+Input: 
+nthread = 0
+stacksize: 8192 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+
+
+Making a distance matrix ..
+
+    1 / 28
+done.
+
+Constructing a UPGMA tree (efffree=0) ... 
+
+    0 / 28
+   10 / 28
+   20 / 28
+done.
+
+Progressive alignment 1/2... 
+
+STEP     1 / 27 f
+STEP     2 / 27 d
+STEP     3 / 27 d
+STEP     4 / 27 d
+STEP     5 / 27 d
+STEP     6 / 27 d
+STEP     7 / 27 d
+STEP     8 / 27 d
+STEP     9 / 27 d
+STEP    10 / 27 d
+STEP    11 / 27 d
+STEP    12 / 27 d
+STEP    13 / 27 d
+STEP    14 / 27 d
+STEP    15 / 27 d
+STEP    16 / 27 d
+STEP    17 / 27 d
+STEP    18 / 27 d
+STEP    19 / 27 d
+STEP    20 / 27 d
+STEP    21 / 27 d
+STEP    22 / 27 d
+STEP    23 / 27 d
+STEP    24 / 27 d
+STEP    25 / 27 d
+STEP    26 / 27 d
+STEP    27 / 27 d
+done.
+
+Making a distance matrix from msa.. 
+
+    0 / 28
+done.
+
+Constructing a UPGMA tree (efffree=1) ... 
+
+    0 / 28
+   10 / 28
+   20 / 28
+done.
+
+Progressive alignment 2/2... 
+
+STEP     1 / 27 f
+STEP     2 / 27 d
+STEP     3 / 27 d
+STEP     4 / 27 d
+STEP     5 / 27 d
+STEP     6 / 27 d
+STEP     7 / 27 d
+STEP     8 / 27 d
+STEP     9 / 27 d
+STEP    10 / 27 d
+STEP    11 / 27 d
+STEP    12 / 27 d
+STEP    13 / 27 d
+STEP    14 / 27 d
+STEP    15 / 27 d
+STEP    16 / 27 d
+STEP    17 / 27 d
+STEP    18 / 27 d
+STEP    19 / 27 d
+STEP    20 / 27 d
+STEP    21 / 27 d
+STEP    22 / 27 d
+STEP    23 / 27 d
+STEP    24 / 27 d
+STEP    25 / 27 d
+STEP    26 / 27 d
+STEP    27 / 27 d
+done.
+
+disttbfast (nuc) Version 7.310 alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+0 thread(s)
+
+
+Strategy:
+ FFT-NS-2 (Fast but rough)
+ Progressive method (guide trees were built 2 times.)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+
+
+Output:/public/groups/meyerlab/ditt/gapclose/adapterfilt-default/yag_hap2_out/dittrichia_hap2_gaps.pre/SjHzNtjAKVD_2-56540579-56541079.fasta
+/public/groups/meyerlab/ditt/gapclose/adapterfilt-default/yag_hap2_out/dittrichia_hap2_gaps.msa/SjHzNtjAKVD_2-56540579-56541079.fasta

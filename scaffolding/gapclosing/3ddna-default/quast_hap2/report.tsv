@@ -1,0 +1,23 @@
+Assembly	dittrichia_adapterfilt_default_hap2
+# contigs (>= 0 bp)	292
+# contigs (>= 1000 bp)	292
+# contigs (>= 5000 bp)	277
+# contigs (>= 10000 bp)	262
+# contigs (>= 25000 bp)	202
+# contigs (>= 50000 bp)	121
+Total length (>= 0 bp)	824394591
+Total length (>= 1000 bp)	824394591
+Total length (>= 5000 bp)	824365777
+Total length (>= 10000 bp)	824260943
+Total length (>= 25000 bp)	823172452
+Total length (>= 50000 bp)	820251953
+# contigs	280
+Largest contig	112033024
+Total length	824374962
+GC (%)	35.66
+N50	96379130
+N90	65833185
+auN	90132935.4
+L50	4
+L90	9
+# N's per 100 kbp	6.49

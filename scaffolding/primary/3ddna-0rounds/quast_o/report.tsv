@@ -1,0 +1,23 @@
+Assembly	dittrichia_adapterfilt_draft_asm_wrapped.FINAL
+# contigs (>= 0 bp)	239
+# contigs (>= 1000 bp)	239
+# contigs (>= 5000 bp)	235
+# contigs (>= 10000 bp)	231
+# contigs (>= 25000 bp)	203
+# contigs (>= 50000 bp)	119
+Total length (>= 0 bp)	834887115
+Total length (>= 1000 bp)	834887115
+Total length (>= 5000 bp)	834877501
+Total length (>= 10000 bp)	834841656
+Total length (>= 25000 bp)	834270512
+Total length (>= 50000 bp)	831118523
+# contigs	236
+Largest contig	113376000
+Total length	834882115
+GC (%)	35.83
+N50	97072500
+N90	65980500
+auN	91333076.0
+L50	4
+L90	9
+# N's per 100 kbp	1.44

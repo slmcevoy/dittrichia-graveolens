@@ -1,0 +1,13 @@
+scaffold                 	start          	end            	gapsize	supportB	supportL	supportR	supportN
+HiC_scaffold_1           	    61260493	    61260993	500	16	12	13	0
+HiC_scaffold_142         	       31862	       32362	500	32	5	18	0
+HiC_scaffold_4           	    10450638	    10451138	500	8	7	13	0
+HiC_scaffold_4           	    23172000	    23172500	500	8	17	10	0
+HiC_scaffold_5           	    35730862	    35731362	500	26	21	0	0
+HiC_scaffold_8           	    33775862	    33776362	500	19	2	1	0
+HiC_scaffold_8           	    38697362	    38697862	500	7	24	21	0
+HiC_scaffold_8           	    38714862	    38715362	500	48	5	9	0
+HiC_scaffold_8           	    38748362	    38748862	500	37	6	3	0
+HiC_scaffold_8           	    38763862	    38764362	500	45	4	1	0
+HiC_scaffold_8           	    38781362	    38781862	500	7	10	14	0
+HiC_scaffold_8           	    65248724	    65249224	500	38	2	6	0

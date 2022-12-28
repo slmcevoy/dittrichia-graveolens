@@ -1,0 +1,10 @@
+(-: Looking for fastq files...fastq files exist
+(-: Aligning files matching /public/groups/meyerlab/ditt/scaffolding/fastq/*_R*.fastq*
+ to genome dittrichia with site file /public/groups/meyerlab/software/juicer/CPU/restriction_sites/dittrichia_none.txt
+(-: Created /public/groups/meyerlab/ditt/scaffolding/splits and /public/groups/meyerlab/ditt/scaffolding/aligned.
+bwa mem -SP5M -t 58 ../assemblies/dittrichia_draft_asm.fasta /public/groups/meyerlab/ditt/scaffolding/splits/ditGra_R1_all.fastq.gz /public/groups/meyerlab/ditt/scaffolding/splits/ditGra_R2_all.fastq.gz > /public/groups/meyerlab/ditt/scaffolding/splits/ditGra_all.fastq.gz.sam
+(-:  Align of /public/groups/meyerlab/ditt/scaffolding/splits/ditGra_all.fastq.gz.sam done successfully
+(-: Finished sorting all sorted files into a single merge.
+(-: Pipeline successfully completed (-:
+Run cleanup.sh to remove the splits directory
+Check /public/groups/meyerlab/ditt/scaffolding/aligned for results

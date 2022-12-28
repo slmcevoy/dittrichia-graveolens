@@ -1,0 +1,4 @@
+gapkey	support
+HiC_scaffold_2:41595500-41596000	30
+HiC_scaffold_2:50137945-50138445	22
+HiC_scaffold_9:61877500-61878000	27
