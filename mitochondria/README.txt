@@ -1,5 +1,7 @@
 ### Mitochondrial Genome Assembly
 
+[Mitochondria google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1858085821)  
+
 Existing short read Illumina data from sample CEJES6B739_S115 was used to construct the inital mito genome in Novoplasty.  A chloroplast genome is required as input, so the chloroplast assembled as a part of this project was used.  A seed gene is also required, so Cox1 from GetOrganelleDB was used.
 
 Scripts:  
