@@ -57,10 +57,6 @@ blast.sh
 It was found to be complete in one contig which was removed from the final assembly.
 filterFasta.sh 
 
-### Scaffold renaming  
-
-
-
 ### Assembly Evaluation  
 
 [Alignment google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=2020405914)  
@@ -76,5 +72,10 @@ Busco v5.4.3 - busco.sh searches the assembly for highly conserved single copy g
 Contig lengths - getlength.py prints the length of each contig.  Useful to see if there are any larger contigs that could progress into pseudomolecules beginning.
 
 Minimap2 v2.24-r1122 - reads used to construct the assembly should corrently map back to the assembly.  
+Archived: /redser4/projects/dittrichia/alignments/assembly_reads  
 
-Merqury 
+Merqury v1.3 (requires meryl v1.3) - compares kmers between the reads and the assembly for assembly completeness and quality.  
+Scripts: assembly_evaluation/meryl.sh assembly_evaluation/default/merqury.sh  
+
+
+### Scaffold renaming
