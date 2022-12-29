@@ -1,0 +1,77 @@
+
+
+-----------------------------------------------
+NOVOPlasty: The Organelle Assembler
+Version 4.3.1
+Author: Nicolas Dierckxsens, (c) 2015-2020
+-----------------------------------------------
+
+
+Input parameters from the configuration file:   *** Verify if everything is correct ***
+
+Project:
+----------------------
+Project name          = Dittrichia
+Type                  = mito
+Genome range          = 12000-22000
+K-mer                 = 33
+Max memory            = 300
+Extended log          = 0
+Save assembled reads  = yes
+Seed Input            = /public/groups/meyerlab/ditt/novoplasty/cox.fasta
+Extend seed directly  = no
+Reference sequence    = 
+Variance detection    = 
+Chloroplast sequence  = /public/groups/meyerlab/ditt/organelle/getorganelle/flye/ditt_lim_flye_chloroplast_adapterfilt_edited2/embplant_pt.complete.graph1.2.path_sequence.fasta
+
+Dataset 1:
+----------------------
+Read Length           = 151
+Insert size           = 151
+Platform              = illumina
+Single/Paired         = PE
+Combined reads        = 
+Forward reads         = /public/groups/meyerlab/ditt/illumina/CEJES6B739_S115_R1_001.fastq.gz
+Reverse reads         = /public/groups/meyerlab/ditt/illumina/CEJES6B739_S115_R2_001.fastq.gz
+Store Hash            = 
+
+Heteroplasmy:
+-----------------------
+Heteroplasmy          = 
+HP exclude list       = 
+PCR-free              = 
+
+Optional:
+----------------------
+Insert size auto      = yes
+Use Quality Scores    = 
+Output path           = 
+
+Subsampled fraction: 100.00 %
+
+Retrieve Seed...
+
+Initial read retrieved successfully: CTATATTTCATCTTTGGTGCCATTGCTGGAGTGATGGGCACATGCTTCTCAGTACTGATTCGTATGGAATTAGCACGACCCGGCGATCAAATTCTTGGTGGGAATCATCAACTTTATAATGTTTTAATAACGGCTCACGCTTTTTTAATGA
+
+Start Assembly...
+
+
+------------Assembly 1 finished: Contigs are automatically merged in Merged_contigs file------------
+
+Contig 01                  : 22094 bp
+
+Total contigs              : 1
+Largest contig             : 22094 bp
+Smallest contig            : 22094 bp
+Average insert size        : 238 bp
+
+
+-----------------------------------------Input data metrics-----------------------------------------
+
+Total reads                : 14231940
+Aligned reads              : 8606
+Assembled reads            : 6700
+Average organelle coverage : 59
+
+-----------------------------------------------------------------------------------------------------
+
