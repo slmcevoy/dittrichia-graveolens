@@ -29,6 +29,8 @@ BLAST v2.13.0 was used to map the Limbarda crithmoides chloroplast genome to the
 Script: chloroplast_check/blast.sh, filterfasta.sh, headers_no_chloroplast.txt, headers_no_chloroplast_alt.txt  
 Output: chloroplast_check/blast_limbarda_dittrichia_adapterfilt_asm_hap1.5000.out, blast_limbarda_dittrichia_adapterfilt_asm_hap2.5000.out  
 
+[Also see details of read alignment examination across matching regions](chloroplast#identification-of-chloroplast-sequence-in-nuclear-assembly)   
+
 The filtered assemblies were QC'd with BUSCO and Quast for final contig statistics.
 Scripts: chloroplast_check/quast.sh, busco.sh  
 Output: chloroplast_check/quast_hap1, quast_hap2, busco_hap1_o, busco_hap2_o   

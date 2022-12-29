@@ -1,4 +1,0 @@
-['contig_4--edge_124+', 82727]
-['contig_2--edge_111+', 70958]
-['contig_1--edge_56+', 20310]
-['contig_3--edge_123+', 14627]
