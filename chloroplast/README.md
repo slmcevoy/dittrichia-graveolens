@@ -1,5 +1,9 @@
 ## Dittrichia chloroplast assembly
 
+[Chloroplast google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1445097887)  
+Files archived at: /redser4/projects/dittrichia/organelles/chloroplast  
+Chloroplast genome in: /redser4/projects/dittrichia/organelles/chloroplast/flye/ditt_lim_flye_chloroplast_adapterfilt_edited2.tar.gz  
+
 Initial attempts were made with GetOrganelle using get_organelle_from_assembly.py and the assembly graph output from HiFiasm.  Results were very fragmented.  
 Script: assemblies/getorganelle/getorg.sh
 
@@ -9,9 +13,7 @@ Script: minimap.sh
 Read ids remaining after filtering  were used to subset the adapter-filtered HiFi reads.  
 Script: seqtk.sh  
 
-This subset of reads was used for hloroplast assembly, testing Canu, HiFiasm, and Flye.  Because HiFiasm and Flye output assembly graphs, those were also run through GetOrganelle.  Flye/GetOrgnaelle produced an assembly that looked complete but with extra contigs of much lower coverage, possibly segments that also closely match regions within the nuclear genome, or maybe artifacts of other duplication.  I manually removed those from the graph and re-ran GetOrganelle on that graph which successfully created a circular genome.  
-
-[Google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1445097887)  
+This subset of reads was used for chloroplast assembly, testing Canu, HiFiasm, and Flye.  Because HiFiasm and Flye output assembly graphs, those were also run through GetOrganelle.  Flye/GetOrgnaelle produced an assembly that looked complete but with extra contigs of much lower coverage, possibly segments that also closely match regions within the nuclear genome, or maybe artifacts of other duplication.  I manually removed those from the graph and re-ran GetOrganelle on that graph which successfully created a circular genome.  
 
 ### Dittrichia HiFi aligned to Limbarda crithmoides chloroplast
 <img src="https://github.com/slmcevoy/dittrichia-graveolens/blob/main/chloroplast/dittreads_limbarda_chloroplast.png">
