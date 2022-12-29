@@ -1,0 +1,6 @@
+ref_start,ref_end,query_start,query_end,ref
+!edge_137-_edge_63+_edge_138-_edge_63-(circular)!unique
+1,151257,9,151012,NC_066031.1
+!edge_137-_edge_63+_edge_138-_edge_63-(circular)!repetitive
+82940,107856,151012,126069,NC_066031.1
+126355,151257,107657,82729,NC_066031.1

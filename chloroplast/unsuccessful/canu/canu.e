@@ -1,0 +1,1499 @@
+--
+--  WARNING:  Deprecated option 'readSamplingCoverage' supplied.
+--  WARNING:  Use 'maxInputCoverage' instead.
+--  WARNING:  'readSamplingCoverage' will be removed in the next release.
+--
+-- canu 2.2
+--
+-- CITATIONS
+--
+-- For assemblies of PacBio HiFi reads:
+--   Nurk S, Walenz BP, Rhiea A, Vollger MR, Logsdon GA, Grothe R, Miga KH, Eichler EE, Phillippy AM, Koren S.
+--   HiCanu: accurate assembly of segmental duplications, satellites, and allelic variants from high-fidelity long reads.
+--   biorXiv. 2020.
+--   https://doi.org/10.1101/2020.03.14.992248
+-- 
+-- Read and contig alignments during correction and consensus use:
+--   Šošic M, Šikic M.
+--   Edlib: a C/C ++ library for fast, exact sequence alignment using edit distance.
+--   Bioinformatics. 2017 May 1;33(9):1394-1395.
+--   http://doi.org/10.1093/bioinformatics/btw753
+-- 
+-- Overlaps are generated using:
+--   Berlin K, et al.
+--   Assembling large genomes with single-molecule sequencing and locality-sensitive hashing.
+--   Nat Biotechnol. 2015 Jun;33(6):623-30.
+--   http://doi.org/10.1038/nbt.3238
+-- 
+--   Myers EW, et al.
+--   A Whole-Genome Assembly of Drosophila.
+--   Science. 2000 Mar 24;287(5461):2196-204.
+--   http://doi.org/10.1126/science.287.5461.2196
+-- 
+-- Contig consensus sequences are generated using an algorithm derived from pbdagcon:
+--   Chin CS, et al.
+--   Nonhybrid, finished microbial genome assemblies from long-read SMRT sequencing data.
+--   Nat Methods. 2013 Jun;10(6):563-9
+--   http://doi.org/10.1038/nmeth.2474
+-- 
+-- CONFIGURE CANU
+--
+-- Detected Java(TM) Runtime Environment '10.0.2' (from 'java') without -d64 support.
+-- Detected gnuplot version '4.6 patchlevel 2   ' (from 'gnuplot') and image format 'png'.
+--
+-- Detected 64 CPUs and 1008 gigabytes of memory on the local machine.
+--
+-- Local machine mode enabled; grid support not detected or not allowed.
+--
+--                                (tag)Concurrency
+--                         (tag)Threads          |
+--                (tag)Memory         |          |
+--        (tag)             |         |          |       total usage      algorithm
+--        -------  ----------  --------   --------  --------------------  -----------------------------
+-- Local: meryl     12.000 GB    4 CPUs x  16 jobs   192.000 GB  64 CPUs  (k-mer counting)
+-- Local: hap        8.000 GB    4 CPUs x  16 jobs   128.000 GB  64 CPUs  (read-to-haplotype assignment)
+-- Local: cormhap    6.000 GB   16 CPUs x   4 jobs    24.000 GB  64 CPUs  (overlap detection with mhap)
+-- Local: obtovl     4.000 GB    8 CPUs x   8 jobs    32.000 GB  64 CPUs  (overlap detection)
+-- Local: utgovl     4.000 GB    8 CPUs x   8 jobs    32.000 GB  64 CPUs  (overlap detection)
+-- Local: cor        -.--- GB    4 CPUs x   - jobs     -.--- GB   - CPUs  (read correction)
+-- Local: ovb        4.000 GB    1 CPU  x  64 jobs   256.000 GB  64 CPUs  (overlap store bucketizer)
+-- Local: ovs        8.000 GB    1 CPU  x  64 jobs   512.000 GB  64 CPUs  (overlap store sorting)
+-- Local: red       16.000 GB    4 CPUs x  16 jobs   256.000 GB  64 CPUs  (read error detection)
+-- Local: oea        8.000 GB    1 CPU  x  64 jobs   512.000 GB  64 CPUs  (overlap error adjustment)
+-- Local: bat       16.000 GB    4 CPUs x   1 job     16.000 GB   4 CPUs  (contig construction with bogart)
+-- Local: cns        -.--- GB    4 CPUs x   - jobs     -.--- GB   - CPUs  (consensus)
+--
+-- Found trimmed raw PacBio HiFi reads in the input files.
+--
+-- Generating assembly 'dittrichia_chloroplast_asm' in '/public/groups/meyerlab/ditt/organelle/canu/ditt_canu_hifi3':
+--   genomeSize:
+--     140000
+--
+--   Overlap Generation Limits:
+--     corOvlErrorRate 0.0000 (  0.00%)
+--     obtOvlErrorRate 0.0250 (  2.50%)
+--     utgOvlErrorRate 0.0100 (  1.00%)
+--
+--   Overlap Processing Limits:
+--     corErrorRate    0.0000 (  0.00%)
+--     obtErrorRate    0.0250 (  2.50%)
+--     utgErrorRate    0.0003 (  0.03%)
+--     cnsErrorRate    0.0500 (  5.00%)
+--
+--   Stages to run:
+--     assemble HiFi reads.
+--
+--
+-- Correction skipped; not enabled.
+--
+-- Trimming skipped; not enabled.
+--
+-- BEGIN ASSEMBLY
+----------------------------------------
+-- Starting command on Tue Nov 15 14:43:44 2022 with 13439.914 GB free disk space
+
+    cd .
+    ./dittrichia_chloroplast_asm.seqStore.sh \
+    > ./dittrichia_chloroplast_asm.seqStore.err 2>&1
+
+-- Finished on Tue Nov 15 14:43:51 2022 (7 seconds) with 13439.858 GB free disk space
+----------------------------------------
+--
+-- In sequence store './dittrichia_chloroplast_asm.seqStore':
+--   Found 10295 reads.
+--   Found 140019560 bases (1000.13 times coverage).
+--    Histogram of corrected reads:
+--    
+--    G=140019560                        sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010        22217       568     14023653  ||       3714-4620            2|-
+--    00020        19636      1239     28008910  ||       4621-5527            1|-
+--    00030        17581      1995     42009623  ||       5528-6434           11|-
+--    00040        16005      2832     56019101  ||       6435-7341          363|----------------------------
+--    00050        14658      3745     70014553  ||       7342-8248          710|------------------------------------------------------
+--    00060        13252      4751     84021335  ||       8249-9155          817|---------------------------------------------------------------
+--    00070        11979      5862     98021861  ||       9156-10062         815|--------------------------------------------------------------
+--    00080        10567      7104    112019092  ||      10063-10969         829|---------------------------------------------------------------
+--    00090         8996      8533    126019949  ||      10970-11876         796|-------------------------------------------------------------
+--    00100         3714     10294    140019560  ||      11877-12783         810|--------------------------------------------------------------
+--    001.000x               10295    140019560  ||      12784-13690         732|--------------------------------------------------------
+--                                               ||      13691-14597         633|-------------------------------------------------
+--                                               ||      14598-15504         613|-----------------------------------------------
+--                                               ||      15505-16411         587|---------------------------------------------
+--                                               ||      16412-17318         455|-----------------------------------
+--                                               ||      17319-18225         404|-------------------------------
+--                                               ||      18226-19132         326|-------------------------
+--                                               ||      19133-20039         279|----------------------
+--                                               ||      20040-20946         241|-------------------
+--                                               ||      20947-21853         228|------------------
+--                                               ||      21854-22760         192|---------------
+--                                               ||      22761-23667         111|---------
+--                                               ||      23668-24574          91|-------
+--                                               ||      24575-25481          90|-------
+--                                               ||      25482-26388          56|-----
+--                                               ||      26389-27295          42|----
+--                                               ||      27296-28202          24|--
+--                                               ||      28203-29109          16|--
+--                                               ||      29110-30016           9|-
+--                                               ||      30017-30923           5|-
+--                                               ||      30924-31830           3|-
+--                                               ||      31831-32737           1|-
+--                                               ||      32738-33644           1|-
+--                                               ||      33645-34551           0|
+--                                               ||      34552-35458           0|
+--                                               ||      35459-36365           0|
+--                                               ||      36366-37272           0|
+--                                               ||      37273-38179           0|
+--                                               ||      38180-39086           1|-
+--                                               ||      39087-39993           0|
+--                                               ||      39994-40900           0|
+--                                               ||      40901-41807           0|
+--                                               ||      41808-42714           0|
+--                                               ||      42715-43621           0|
+--                                               ||      43622-44528           0|
+--                                               ||      44529-45435           0|
+--                                               ||      45436-46342           0|
+--                                               ||      46343-47249           0|
+--                                               ||      47250-48156           0|
+--                                               ||      48157-49063           1|-
+--    
+--
+-- In sequence store './dittrichia_chloroplast_asm.seqStore':
+--   Found 10295 reads.
+--   Found 140019560 bases (1000.13 times coverage).
+--    Histogram of corrected-trimmed reads:
+--    
+--    G=140019560                        sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010        22217       568     14023653  ||       3714-4620            2|-
+--    00020        19636      1239     28008910  ||       4621-5527            1|-
+--    00030        17581      1995     42009623  ||       5528-6434           11|-
+--    00040        16005      2832     56019101  ||       6435-7341          363|----------------------------
+--    00050        14658      3745     70014553  ||       7342-8248          710|------------------------------------------------------
+--    00060        13252      4751     84021335  ||       8249-9155          817|---------------------------------------------------------------
+--    00070        11979      5862     98021861  ||       9156-10062         815|--------------------------------------------------------------
+--    00080        10567      7104    112019092  ||      10063-10969         829|---------------------------------------------------------------
+--    00090         8996      8533    126019949  ||      10970-11876         796|-------------------------------------------------------------
+--    00100         3714     10294    140019560  ||      11877-12783         810|--------------------------------------------------------------
+--    001.000x               10295    140019560  ||      12784-13690         732|--------------------------------------------------------
+--                                               ||      13691-14597         633|-------------------------------------------------
+--                                               ||      14598-15504         613|-----------------------------------------------
+--                                               ||      15505-16411         587|---------------------------------------------
+--                                               ||      16412-17318         455|-----------------------------------
+--                                               ||      17319-18225         404|-------------------------------
+--                                               ||      18226-19132         326|-------------------------
+--                                               ||      19133-20039         279|----------------------
+--                                               ||      20040-20946         241|-------------------
+--                                               ||      20947-21853         228|------------------
+--                                               ||      21854-22760         192|---------------
+--                                               ||      22761-23667         111|---------
+--                                               ||      23668-24574          91|-------
+--                                               ||      24575-25481          90|-------
+--                                               ||      25482-26388          56|-----
+--                                               ||      26389-27295          42|----
+--                                               ||      27296-28202          24|--
+--                                               ||      28203-29109          16|--
+--                                               ||      29110-30016           9|-
+--                                               ||      30017-30923           5|-
+--                                               ||      30924-31830           3|-
+--                                               ||      31831-32737           1|-
+--                                               ||      32738-33644           1|-
+--                                               ||      33645-34551           0|
+--                                               ||      34552-35458           0|
+--                                               ||      35459-36365           0|
+--                                               ||      36366-37272           0|
+--                                               ||      37273-38179           0|
+--                                               ||      38180-39086           1|-
+--                                               ||      39087-39993           0|
+--                                               ||      39994-40900           0|
+--                                               ||      40901-41807           0|
+--                                               ||      41808-42714           0|
+--                                               ||      42715-43621           0|
+--                                               ||      43622-44528           0|
+--                                               ||      44529-45435           0|
+--                                               ||      45436-46342           0|
+--                                               ||      46343-47249           0|
+--                                               ||      47250-48156           0|
+--                                               ||      48157-49063           1|-
+--    
+----------------------------------------
+-- Starting command on Tue Nov 15 14:43:52 2022 with 13439.857 GB free disk space
+
+    cd unitigging/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Tue Nov 15 14:43:52 2022 (in the blink of an eye) with 13439.857 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  0.39 GB       2
+--
+--  For 10295 reads with 140019560 bases, limit to 1 batch.
+--  Will count kmers using 01 jobs, each using 2 GB and 4 threads.
+--
+-- Finished stage 'merylConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Tue Nov 15 14:43:53 2022 with 13439.857 GB free disk space (1 processes; 16 concurrently)
+
+    cd unitigging/0-mercounts
+    ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
+
+-- Finished on Tue Nov 15 14:44:10 2022 (17 seconds) with 13439.816 GB free disk space
+----------------------------------------
+-- Found 1 Kmer counting (meryl) outputs.
+-- Finished stage 'utg-merylCountCheck', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Tue Nov 15 14:44:10 2022 with 13439.816 GB free disk space (1 processes; 16 concurrently)
+
+    cd unitigging/0-mercounts
+    ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
+
+-- Finished on Tue Nov 15 14:44:13 2022 (3 seconds) with 13439.827 GB free disk space
+----------------------------------------
+-- Meryl finished successfully.  Kmer frequency histogram:
+--
+--  22-mers                                                                                           Fraction
+--    Occurrences   NumMers                                                                         Unique Total
+--       1-     1         0                                                                        0.0000 0.0000
+--       2-     2    421742 ****************************************************                   0.1017 0.0089
+--       3-     4    463327 *********************************************************              0.1644 0.0171
+--       5-     7    486343 ************************************************************           0.2582 0.0354
+--       8-    11    505001 **************************************************************         0.3625 0.0668
+--      12-    16    535077 ******************************************************************     0.4796 0.1202
+--      17-    22    549283 ********************************************************************   0.6052 0.2022
+--      23-    29    565124 ********************************************************************** 0.7369 0.3199
+--      30-    37    356666 ********************************************                           0.8650 0.4692
+--      38-    46    100654 ************                                                           0.9410 0.5814
+--      47-    56     33951 ****                                                                   0.9614 0.6184
+--      57-    67     20873 **                                                                     0.9690 0.6355
+--      68-    79     14862 *                                                                      0.9738 0.6487
+--      80-    92      7922                                                                        0.9772 0.6597
+--      93-   106      4444                                                                        0.9791 0.6667
+--     107-   121      2367                                                                        0.9801 0.6711
+--     122-   137      1329                                                                        0.9806 0.6738
+--     138-   154      1130                                                                        0.9810 0.6756
+--     155-   172      1323                                                                        0.9812 0.6772
+--     173-   191      1687                                                                        0.9815 0.6796
+--     192-   211      1386                                                                        0.9820 0.6829
+--     212-   232      1436                                                                        0.9823 0.6859
+--     233-   254      1510                                                                        0.9826 0.6891
+--     255-   277      2278                                                                        0.9830 0.6930
+--     278-   301      1790                                                                        0.9836 0.6997
+--     302-   326      1111                                                                        0.9840 0.7048
+--     327-   352      1804                                                                        0.9842 0.7083
+--     353-   379     19146 **                                                                     0.9847 0.7152
+--     380-   407     20483 **                                                                     0.9896 0.7946
+--     408-   436     10816 *                                                                      0.9944 0.8777
+--     437-   466      3895                                                                        0.9969 0.9222
+--     467-   497      1924                                                                        0.9978 0.9398
+--     498-   529       844                                                                        0.9982 0.9494
+--     530-   562       567                                                                        0.9984 0.9539
+--     563-   596       722                                                                        0.9986 0.9572
+--     597-   631      1633                                                                        0.9987 0.9617
+--     632-   667      1868                                                                        0.9991 0.9722
+--     668-   704      1033                                                                        0.9996 0.9851
+--     705-   742       289                                                                        0.9998 0.9926
+--     743-   781       204                                                                        0.9999 0.9944
+--     782-   821       102                                                                        1.0000 0.9961
+--
+--           0 (max occurrences)
+--    95179201 (total mers, non-unique)
+--     4148050 (distinct mers, non-unique)
+--           0 (unique mers)
+-- Finished stage 'meryl-process', reset canuIteration.
+--
+-- Removing meryl database 'unitigging/0-mercounts/dittrichia_chloroplast_asm.ms22'.
+--
+-- OVERLAPPER (normal) (assembly) erate=0.01
+--
+----------------------------------------
+-- Starting command on Tue Nov 15 14:44:14 2022 with 13439.871 GB free disk space
+
+    cd unitigging/1-overlapper
+    /public/groups/meyerlab/software/canu-2.2/bin/overlapInCorePartition \
+     -S  ../../dittrichia_chloroplast_asm.seqStore \
+     -hl 80000000 \
+     -rl 1000000000 \
+     -ol 500 \
+     -o  ./dittrichia_chloroplast_asm.partition \
+    > ./dittrichia_chloroplast_asm.partition.err 2>&1
+
+-- Finished on Tue Nov 15 14:44:14 2022 (in the blink of an eye) with 13439.871 GB free disk space
+----------------------------------------
+--
+-- Configured 2 overlapInCore jobs.
+-- Finished stage 'utg-overlapConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'utgovl' concurrent execution on Tue Nov 15 14:44:14 2022 with 13439.871 GB free disk space (2 processes; 8 concurrently)
+
+    cd unitigging/1-overlapper
+    ./overlap.sh 1 > ./overlap.000001.out 2>&1
+    ./overlap.sh 2 > ./overlap.000002.out 2>&1
+
+-- Finished on Tue Nov 15 14:46:28 2022 (134 seconds) with 13439.845 GB free disk space
+----------------------------------------
+-- Found 2 overlapInCore output files.
+--
+-- overlapInCore compute 'unitigging/1-overlapper':
+--   kmer hits
+--     with no overlap         18890299   9445149.5 +- 4783877.895
+--     with an overlap          1361916      680958 +- 367750.68
+--
+--   overlaps                   1361916      680958 +- 367750.68
+--     contained                 251668      125834 +- 68976.852
+--     dovetail                 1110248      555124 +- 298773.828
+--
+--   overlaps rejected
+--     multiple per pair              0           0 +- 0
+--     bad short window               0           0 +- 0
+--     bad long window                0           0 +- 0
+-- Finished stage 'utg-overlapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:46:28 2022 with 13439.845 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/ovStoreConfig \
+     -S ../dittrichia_chloroplast_asm.seqStore \
+     -M 4-8 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./dittrichia_chloroplast_asm.ovlStore.config \
+     > ./dittrichia_chloroplast_asm.ovlStore.config.txt \
+    2> ./dittrichia_chloroplast_asm.ovlStore.config.err
+
+-- Finished on Tue Nov 15 14:46:28 2022 (like a bat out of hell) with 13439.845 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store unitigging/dittrichia_chloroplast_asm.ovlStore using:
+--      2 buckets
+--      2 slices
+--        using at most 1 GB memory each
+-- Finished stage 'utg-overlapStoreConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovB' concurrent execution on Tue Nov 15 14:46:28 2022 with 13439.845 GB free disk space (2 processes; 64 concurrently)
+
+    cd unitigging/dittrichia_chloroplast_asm.ovlStore.BUILDING
+    ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
+    ./scripts/1-bucketize.sh 2 > ./logs/1-bucketize.000002.out 2>&1
+
+-- Finished on Tue Nov 15 14:46:30 2022 (2 seconds) with 13439.8 GB free disk space
+----------------------------------------
+-- Overlap store bucketizer finished.
+-- Finished stage 'utg-overlapStoreBucketizerCheck', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Tue Nov 15 14:46:30 2022 with 13439.8 GB free disk space (2 processes; 64 concurrently)
+
+    cd unitigging/dittrichia_chloroplast_asm.ovlStore.BUILDING
+    ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
+    ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
+
+-- Finished on Tue Nov 15 14:46:32 2022 (2 seconds) with 13439.788 GB free disk space
+----------------------------------------
+-- Overlap store sorter finished.
+-- Finished stage 'utg-overlapStoreSorterCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:46:32 2022 with 13439.788 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/ovStoreIndexer \
+      -O  ./dittrichia_chloroplast_asm.ovlStore.BUILDING \
+      -S ../dittrichia_chloroplast_asm.seqStore \
+      -C  ./dittrichia_chloroplast_asm.ovlStore.config \
+      -delete \
+    > ./dittrichia_chloroplast_asm.ovlStore.BUILDING.index.err 2>&1
+
+-- Finished on Tue Nov 15 14:46:32 2022 (fast as lightning) with 13439.789 GB free disk space
+----------------------------------------
+-- Overlap store indexer finished.
+-- Checking store.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:46:32 2022 with 13439.789 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/ovStoreDump \
+     -S ../dittrichia_chloroplast_asm.seqStore \
+     -O  ./dittrichia_chloroplast_asm.ovlStore \
+     -counts \
+     > ./dittrichia_chloroplast_asm.ovlStore/counts.dat 2> ./dittrichia_chloroplast_asm.ovlStore/counts.err
+
+-- Finished on Tue Nov 15 14:46:32 2022 (lickety-split) with 13439.788 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'unitigging/dittrichia_chloroplast_asm.ovlStore' successfully constructed.
+-- Found 2723832 overlaps for 10278 reads; 2181 reads have no overlaps.
+--
+--
+-- Purged 0.022 GB in 6 overlap output files.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:46:32 2022 with 13439.814 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/ovStoreStats \
+     -C 1000.13 \
+     -S ../dittrichia_chloroplast_asm.seqStore \
+     -O  ./dittrichia_chloroplast_asm.ovlStore \
+     -o  ./dittrichia_chloroplast_asm.ovlStore \
+     > ./dittrichia_chloroplast_asm.ovlStore.summary.err 2>&1
+
+-- Finished on Tue Nov 15 14:46:33 2022 (one second) with 13439.814 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'unitigging/dittrichia_chloroplast_asm.ovlStore' contains:
+--
+--   category            reads     %          read length        feature size or coverage  analysis
+--   ----------------  -------  -------  ----------------------  ------------------------  --------------------
+--   middle-missing          5    0.05     7371.40 +- 2619.03       1039.20 +- 1423.05    (bad trimming)
+--   middle-hump             3    0.03    16638.33 +- 4507.86       3873.00 +- 667.60     (bad trimming)
+--   no-5-prime            233    2.26    14743.08 +- 3708.48       2490.59 +- 2719.86    (bad trimming)
+--   no-3-prime            214    2.08    14719.15 +- 3558.63       2536.68 +- 2903.49    (bad trimming)
+--   
+--   low-coverage         6402   62.19    10025.56 +- 3059.06         29.31 +- 39.75      (easy to assemble, potential for lower quality consensus)
+--   unique               1630   15.83     7411.25 +- 2196.04        379.47 +- 41.04      (easy to assemble, perfect, yay)
+--   repeat-cont             0    0.00        0.00 +- 0.00             0.00 +- 0.00       (potential for consensus errors, no impact on assembly)
+--   repeat-dove             0    0.00        0.00 +- 0.00             0.00 +- 0.00       (hard to assemble, likely won't assemble correctly or even at all)
+--   
+--   span-repeat           250    2.43     8530.92 +- 2408.67       4440.21 +- 3018.78    (read spans a large repeat, usually easy to assemble)
+--   uniq-repeat-cont     1520   14.76     7473.43 +- 2017.59                             (should be uniquely placed, low potential for consensus errors, no impact on assembly)
+--   uniq-repeat-dove       21    0.20    14550.38 +- 1818.55                             (will end contigs, potential to misassemble)
+--   uniq-anchor             0    0.00        0.00 +- 0.00             0.00 +- 0.00       (repeat read, with unique section, probable bad read)
+-- Finished stage 'utg-createOverlapStore', reset canuIteration.
+--
+-- Loading read lengths.
+-- Loading number of overlaps per read.
+--
+-- Configure RED for 16gb memory.
+--                   Batches of at most (unlimited) reads.
+--                                      500000000 bases.
+--                   Expecting evidence of at most 536870912 bases per iteration.
+--
+--           Total                                               Reads                 Olaps Evidence
+--    Job   Memory      Read Range         Reads        Bases   Memory        Olaps   Memory   Memory  (Memory in MB)
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--      1 16384.49         1-9702           8010    108854495 13288.15      2126222    24.33  1024.00
+--      2  6883.24      9703-12459          2285     31165065  3804.40       597610     6.84  1024.00
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--                                                  140019560               2723832
+-- Finished stage 'readErrorDetectionConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'red' concurrent execution on Tue Nov 15 14:46:34 2022 with 13439.814 GB free disk space (2 processes; 16 concurrently)
+
+    cd unitigging/3-overlapErrorAdjustment
+    ./red.sh 1 > ./red.000001.out 2>&1
+    ./red.sh 2 > ./red.000002.out 2>&1
+
+-- Finished on Tue Nov 15 14:51:25 2022 (291 seconds) with 13439.818 GB free disk space
+----------------------------------------
+-- Found 2 read error detection output files.
+-- Finished stage 'readErrorDetectionCheck', reset canuIteration.
+--
+-- Loading read lengths.
+-- Loading number of overlaps per read.
+--
+-- Configure OEA for 8gb memory.
+--                   Batches of at most (unlimited) reads.
+--                                      300000000 bases.
+--
+--           Total                                               Reads                 Olaps  Adjusts
+--    Job   Memory      Read Range         Reads        Bases   Memory        Olaps   Memory   Memory  (Memory in MB)
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--      1  2593.93         1-12459         10295    140019560   141.85      2723832    83.12   320.96
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--                                                  140019560               2723832
+-- Finished stage 'overlapErrorAdjustmentConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'oea' concurrent execution on Tue Nov 15 14:51:25 2022 with 13439.818 GB free disk space (1 processes; 64 concurrently)
+
+    cd unitigging/3-overlapErrorAdjustment
+    ./oea.sh 1 > ./oea.000001.out 2>&1
+
+-- Finished on Tue Nov 15 14:56:20 2022 (295 seconds) with 13439.813 GB free disk space
+----------------------------------------
+-- Found 1 overlap error adjustment output files.
+-- Finished stage 'overlapErrorAdjustmentCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:56:20 2022 with 13439.813 GB free disk space
+
+    cd unitigging/3-overlapErrorAdjustment
+    /public/groups/meyerlab/software/canu-2.2/bin/loadErates \
+      -S ../../dittrichia_chloroplast_asm.seqStore \
+      -O ../dittrichia_chloroplast_asm.ovlStore \
+      -L ./oea.files \
+    > ./oea.apply.err 2>&1
+
+-- Finished on Tue Nov 15 14:56:20 2022 (like a bat out of hell) with 13439.806 GB free disk space
+----------------------------------------
+-- No report available.
+-- Finished stage 'updateOverlapStore', reset canuIteration.
+-- Finished stage 'unitig', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'bat' concurrent execution on Tue Nov 15 14:56:20 2022 with 13439.806 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/4-unitigger
+    ./unitigger.sh 1 > ./unitigger.000001.out 2>&1
+
+-- Finished on Tue Nov 15 14:56:25 2022 (5 seconds) with 13439.804 GB free disk space
+----------------------------------------
+-- Unitigger finished successfully.
+--  
+--  ERROR RATES
+--  -----------
+--                                                   --------threshold------
+--  11198                        fraction error      fraction        percent
+--  samples                              (1e-5)         error          error
+--                   --------------------------      --------       --------
+--  command line (-eg)                           ->     30.00        0.0300%
+--  command line (-ef)                           ->  -----.--      ---.----%
+--  command line (-eM)                           ->     30.00        0.0300%
+--  mean + std.dev       0.33 +-  12 *     2.57  ->     31.15        0.0311%
+--  median + mad         0.00 +-  12 *     0.00  ->      0.00        0.0000%
+--  90th percentile                              ->      1.00        0.0010%  (enabled)
+--  
+--  BEST EDGE FILTERING
+--  -------------------
+--  At graph threshold 0.0300%, reads:
+--    available to have edges:         1881
+--    with at least one edge:          1712
+--  
+--  At max threshold 0.0300%, reads:  (not computed)
+--    available to have edges:            0
+--    with at least one edge:             0
+--  
+--  At tight threshold 0.0010%, reads with:
+--    both edges below error threshold:      1511  (80.00% minReadsBest threshold = 1369)
+--    one  edge  above error threshold:       183
+--    both edges above error threshold:        18
+--    at least one edge:                     1712
+--  
+--  At loose threshold 0.0300%, reads with:
+--    both edges below error threshold:      1712  (80.00% minReadsBest threshold = 1369)
+--    one  edge  above error threshold:         0
+--    both edges above error threshold:         0
+--    at least one edge:                     1712
+--  
+--  
+--  INITIAL EDGES
+--  -------- ----------------------------------------
+--      7826 reads are contained
+--      3452 reads have no best edges (singleton)
+--       374 reads have only one best edge (spur) 
+--                366 are mutual best
+--       807 reads have two best edges 
+--                 22 have one mutual best edge
+--                782 have two mutual best edges
+--  
+--  
+--  FINAL EDGES
+--  -------- ----------------------------------------
+--      7826 reads are contained
+--      3464 reads have no best edges (singleton)
+--       369 reads have only one best edge (spur) 
+--                367 are mutual best
+--       800 reads have two best edges 
+--                 15 have one mutual best edge
+--                783 have two mutual best edges
+--  
+--  
+--  EDGE FILTERING
+--  -------- ------------------------------------------
+--         0 reads are ignored
+--      1173 reads have a gap in overlap coverage
+--         5 reads have lopsided best edges
+-- Found, in version 1, after unitig construction:
+--   contigs:      178 sequences, total length 4244892 bp (including 1 repeats of total length 12215 bp).
+--   bubbles:      3 sequences, total length 50720 bp.
+--   unassembled:  1469 sequences, total length 16620427 bp.
+--
+-- Contig sizes based on genome size 140kbp:
+--
+--            NG (bp)  LG (contigs)    sum (bp)
+--         ----------  ------------  ----------
+--     10       79172             1       79172
+--     20       79172             1       79172
+--     30       79172             1       79172
+--     40       79172             1       79172
+--     50       79172             1       79172
+--     60       56600             2      135772
+--     70       56600             2      135772
+--     80       56600             2      135772
+--     90       56600             2      135772
+--    100       50858             3      186630
+--    110       50858             3      186630
+--    120       50858             3      186630
+--    130       50858             3      186630
+--    140       49045             4      235675
+--    150       49045             4      235675
+--    160       49045             4      235675
+--    170       43310             5      278985
+--    180       43310             5      278985
+--    190       43310             5      278985
+--    200       40159             6      319144
+--    210       40159             6      319144
+--    220       40159             6      319144
+--    230       40035             7      359179
+--    240       40035             7      359179
+--    250       40035             7      359179
+--    260       35979             8      395158
+--    270       35979             8      395158
+--    280       35979             8      395158
+--    290       32685             9      427843
+--    300       32685             9      427843
+--    310       32224            10      460067
+--    320       32224            10      460067
+--    330       31831            11      491898
+--    340       31831            11      491898
+--    350       31831            11      491898
+--    360       31725            12      523623
+--    370       31725            12      523623
+--    380       29957            13      553580
+--    390       29957            13      553580
+--    400       29820            14      583400
+--    410       29820            14      583400
+--    420       29389            15      612789
+--    430       29389            15      612789
+--    440       29035            16      641824
+--    450       29035            16      641824
+--    460       28562            17      670386
+--    470       28562            17      670386
+--    480       27481            18      697867
+--    490       27481            18      697867
+--    500       27439            19      725306
+--    510       27439            19      725306
+--    520       27151            20      752457
+--    530       27151            20      752457
+--    540       27007            21      779464
+--    550       27007            21      779464
+--    560       26720            22      806184
+--    570       26720            22      806184
+--    580       26483            23      832667
+--    590       26483            23      832667
+--    600       26215            24      858882
+--    610       26215            24      858882
+--    620       26109            25      884991
+--    630       26109            25      884991
+--    640       25985            26      910976
+--    650       25985            26      910976
+--    660       25890            27      936866
+--    670       25834            28      962700
+--    680       25834            28      962700
+--    690       25777            29      988477
+--    700       25777            29      988477
+--    710       25585            30     1014062
+--    720       25585            30     1014062
+--    730       25522            31     1039584
+--    740       25522            31     1039584
+--    750       25496            32     1065080
+--    760       25496            32     1065080
+--    770       25301            33     1090381
+--    780       25245            34     1115626
+--    790       25245            34     1115626
+--    800       25237            35     1140863
+--    810       25237            35     1140863
+--    820       25237            36     1166100
+--    830       25237            36     1166100
+--    840       25175            37     1191275
+--    850       25175            37     1191275
+--    860       25120            38     1216395
+--    870       25040            39     1241435
+--    880       25040            39     1241435
+--    890       24979            40     1266414
+--    900       24979            40     1266414
+--    910       24960            41     1291374
+--    920       24960            41     1291374
+--    930       24940            42     1316314
+--    940       24940            42     1316314
+--    950       24733            43     1341047
+--    960       24676            44     1365723
+--    970       24676            44     1365723
+--    980       24564            45     1390287
+--    990       24564            45     1390287
+--    000       24542            46     1414829
+--    010       24542            46     1414829
+--    020       24491            47     1439320
+--    030       24439            48     1463759
+--    040       24439            48     1463759
+--    050       24357            49     1488116
+--    060       24357            49     1488116
+--    070       24346            50     1512462
+--    080       24346            50     1512462
+--    090       24167            51     1536629
+--    100       24135            52     1560764
+--    110       24135            52     1560764
+--    120       24079            53     1584843
+--    130       24079            53     1584843
+--    140       24078            54     1608921
+--    150       24037            55     1632958
+--    160       24037            55     1632958
+--    170       23953            56     1656911
+--    180       23953            56     1656911
+--    190       23945            57     1680856
+--    200       23945            57     1680856
+--    210       23895            58     1704751
+--    220       23870            59     1728621
+--    230       23870            59     1728621
+--    240       23780            60     1752401
+--    250       23780            60     1752401
+--    260       23742            61     1776143
+--    270       23721            62     1799864
+--    280       23721            62     1799864
+--    290       23655            63     1823519
+--    300       23655            63     1823519
+--    310       23637            64     1847156
+--    320       23574            65     1870730
+--    330       23574            65     1870730
+--    340       23511            66     1894241
+--    350       23511            66     1894241
+--    360       23508            67     1917749
+--    370       23501            68     1941250
+--    380       23501            68     1941250
+--    390       23496            69     1964746
+--    400       23496            69     1964746
+--    410       23486            70     1988232
+--    420       23486            70     1988232
+--    430       23433            71     2011665
+--    440       23417            72     2035082
+--    450       23417            72     2035082
+--    460       23411            73     2058493
+--    470       23411            73     2058493
+--    480       23394            74     2081887
+--    490       23394            75     2105281
+--    500       23394            75     2105281
+--    510       23382            76     2128663
+--    520       23382            76     2128663
+--    530       23194            77     2151857
+--    540       23104            78     2174961
+--    550       23104            78     2174961
+--    560       23038            79     2197999
+--    570       22982            80     2220981
+--    580       22982            80     2220981
+--    590       22971            81     2243952
+--    600       22971            81     2243952
+--    610       22968            82     2266920
+--    620       22914            83     2289834
+--    630       22914            83     2289834
+--    640       22914            84     2312748
+--    650       22914            84     2312748
+--    660       22912            85     2335660
+--    670       22911            86     2358571
+--    680       22911            86     2358571
+--    690       22868            87     2381439
+--    700       22868            87     2381439
+--    710       22861            88     2404300
+--    720       22823            89     2427123
+--    730       22823            89     2427123
+--    740       22784            90     2449907
+--    750       22716            91     2472623
+--    760       22716            91     2472623
+--    770       22614            92     2495237
+--    780       22614            92     2495237
+--    790       22607            93     2517844
+--    800       22602            94     2540446
+--    810       22602            94     2540446
+--    820       22524            95     2562970
+--    830       22524            95     2562970
+--    840       22517            96     2585487
+--    850       22445            97     2607932
+--    860       22445            97     2607932
+--    870       22386            98     2630318
+--    880       22300            99     2652618
+--    890       22300            99     2652618
+--    900       22299           100     2674917
+--    910       22299           100     2674917
+--    920       22282           101     2697199
+--    930       22208           102     2719407
+--    940       22208           102     2719407
+--    950       22170           103     2741577
+--    960       22153           104     2763730
+--    970       22153           104     2763730
+--    980       22068           105     2785798
+--    990       22045           106     2807843
+--    000       22045           106     2807843
+--    010       21988           107     2829831
+--    020       21988           107     2829831
+--    030       21866           108     2851697
+--    040       21855           109     2873552
+--    050       21855           109     2873552
+--    060       21850           110     2895402
+--    070       21757           111     2917159
+--    080       21757           111     2917159
+--    090       21706           112     2938865
+--    100       21700           113     2960565
+--    110       21700           113     2960565
+--    120       21670           114     2982235
+--    130       21670           114     2982235
+--    140       21669           115     3003904
+--    150       21642           116     3025546
+--    160       21642           116     3025546
+--    170       21633           117     3047179
+--    180       21606           118     3068785
+--    190       21606           118     3068785
+--    200       21603           119     3090388
+--    210       21596           120     3111984
+--    220       21596           120     3111984
+--    230       21578           121     3133562
+--    240       21569           122     3155131
+--    250       21569           122     3155131
+--    260       21535           123     3176666
+--    270       21524           124     3198190
+--    280       21524           124     3198190
+--    290       21518           125     3219708
+--    300       21469           126     3241177
+--    310       21469           126     3241177
+--    320       21448           127     3262625
+--    330       21448           127     3262625
+--    340       21437           128     3284062
+--    350       21357           129     3305419
+--    360       21357           129     3305419
+--    370       21199           130     3326618
+--    380       21148           131     3347766
+--    390       21148           131     3347766
+--    400       21095           132     3368861
+--    410       21064           133     3389925
+--    420       21064           133     3389925
+--    430       21030           134     3410955
+--    440       21026           135     3431981
+--    450       21026           135     3431981
+--    460       21002           136     3452983
+--    470       20943           137     3473926
+--    480       20943           137     3473926
+--    490       20856           138     3494782
+--    500       20841           139     3515623
+--    510       20841           139     3515623
+--    520       20834           140     3536457
+--    530       20767           141     3557224
+--    540       20767           141     3557224
+--    550       20716           142     3577940
+--    560       20707           143     3598647
+--    570       20707           143     3598647
+--    580       20673           144     3619320
+--    590       20673           145     3639993
+--    600       20667           146     3660660
+--    610       20667           146     3660660
+--    620       20605           147     3681265
+--    630       20583           148     3701848
+--    640       20583           148     3701848
+--    650       20353           149     3722201
+--    660       20263           150     3742464
+--    670       20263           150     3742464
+--    680       20107           151     3762571
+--    690       20086           152     3782657
+--    700       20086           152     3782657
+--    710       20076           153     3802733
+--    720       19926           154     3822659
+--    730       19926           154     3822659
+--    740       19904           155     3842563
+--    750       19864           156     3862427
+--    760       19821           157     3882248
+--    770       19821           157     3882248
+--    780       19611           158     3901859
+--    790       19582           159     3921441
+--    800       19582           159     3921441
+--    810       19513           160     3940954
+--    820       19304           161     3960258
+--    830       19072           162     3979330
+--    840       19072           162     3979330
+--    850       18892           163     3998222
+--    860       18669           164     4016891
+--    870       18657           165     4035548
+--    880       18657           165     4035548
+--    890       18445           166     4053993
+--    900       18413           167     4072406
+--    910       18117           168     4090523
+--    920       18117           168     4090523
+--    930       17663           169     4108186
+--    940       17575           170     4125761
+--    950       16958           171     4142719
+--    960       16719           172     4159438
+--    970       16719           172     4159438
+--    980       16638           173     4176076
+--    990       16307           174     4192383
+--    000       15200           175     4207583
+--    010       14269           176     4221852
+--    020       13462           177     4235314
+--    030        9578           178     4244892
+--
+-- Finished stage 'unitigCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:56:25 2022 with 13439.804 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/utgcns \
+      -S ../dittrichia_chloroplast_asm.seqStore \
+      -T  ./dittrichia_chloroplast_asm.ctgStore 1 \
+      -partition 0.8 1.5 0.1 \
+    > ./dittrichia_chloroplast_asm.ctgStore/partitioning.log 2>&1
+
+-- Finished on Tue Nov 15 14:56:27 2022 (2 seconds) with 13439.76 GB free disk space
+----------------------------------------
+-- Using slow alignment for consensus (iteration '0').
+-- Configured 7 consensus jobs.
+-- Finished stage 'consensusConfigure', reset canuIteration.
+--
+-- Local: cns        0.500 GB    4 CPUs x  16 jobs     8.000 GB  64 CPUs  (consensus)
+--
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cns' concurrent execution on Tue Nov 15 14:56:27 2022 with 13439.76 GB free disk space (7 processes; 16 concurrently)
+
+    cd unitigging/5-consensus
+    ./consensus.sh 1 > ./consensus.000001.out 2>&1
+    ./consensus.sh 2 > ./consensus.000002.out 2>&1
+    ./consensus.sh 3 > ./consensus.000003.out 2>&1
+    ./consensus.sh 4 > ./consensus.000004.out 2>&1
+    ./consensus.sh 5 > ./consensus.000005.out 2>&1
+    ./consensus.sh 6 > ./consensus.000006.out 2>&1
+    ./consensus.sh 7 > ./consensus.000007.out 2>&1
+
+-- Finished on Tue Nov 15 14:57:13 2022 (46 seconds) with 13439.693 GB free disk space
+----------------------------------------
+-- Using slow alignment for consensus (iteration '1').
+-- Configured 7 consensus jobs.
+-- All 7 consensus jobs finished successfully.
+-- Finished stage 'consensusCheck', reset canuIteration.
+-- Using slow alignment for consensus (iteration '0').
+-- Configured 7 consensus jobs.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:57:13 2022 with 13439.693 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/tgStoreLoad \
+      -S ../dittrichia_chloroplast_asm.seqStore \
+      -T  ./dittrichia_chloroplast_asm.ctgStore 2 \
+      -L ./5-consensus/ctgcns.files \
+    > ./5-consensus/ctgcns.files.ctgStoreLoad.err 2>&1
+
+-- Finished on Tue Nov 15 14:57:16 2022 (3 seconds) with 13439.635 GB free disk space
+----------------------------------------
+-- Purging consensus output after loading to ctgStore.
+-- Purged 7 .cns outputs.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:57:16 2022 with 13439.703 GB free disk space
+
+    cd unitigging
+    /public/groups/meyerlab/software/canu-2.2/bin/tgStoreDump \
+      -S ../dittrichia_chloroplast_asm.seqStore \
+      -T ./dittrichia_chloroplast_asm.ctgStore 2 \
+      -sizes -s 140000 \
+    > ./dittrichia_chloroplast_asm.ctgStore/seqDB.v002.sizes.txt
+
+-- Finished on Tue Nov 15 14:57:18 2022 (2 seconds) with 13439.702 GB free disk space
+----------------------------------------
+-- Found, in version 2, after consensus generation:
+--   contigs:      178 sequences, total length 6099298 bp (including 1 repeats of total length 18087 bp).
+--   bubbles:      3 sequences, total length 74347 bp.
+--   unassembled:  1469 sequences, total length 24005852 bp.
+--
+-- Contig sizes based on genome size 140kbp:
+--
+--            NG (bp)  LG (contigs)    sum (bp)
+--         ----------  ------------  ----------
+--     10      114530             1      114530
+--     20      114530             1      114530
+--     30      114530             1      114530
+--     40      114530             1      114530
+--     50      114530             1      114530
+--     60      114530             1      114530
+--     70      114530             1      114530
+--     80      114530             1      114530
+--     90       79375             2      193905
+--    100       79375             2      193905
+--    110       79375             2      193905
+--    120       79375             2      193905
+--    130       79375             2      193905
+--    140       72141             3      266046
+--    150       72141             3      266046
+--    160       72141             3      266046
+--    170       72141             3      266046
+--    180       72141             3      266046
+--    190       72141             3      266046
+--    200       69375             4      335421
+--    210       69375             4      335421
+--    220       69375             4      335421
+--    230       69375             4      335421
+--    240       61046             5      396467
+--    250       61046             5      396467
+--    260       61046             5      396467
+--    270       61046             5      396467
+--    280       61046             5      396467
+--    290       57721             6      454188
+--    300       57721             6      454188
+--    310       57721             6      454188
+--    320       57721             6      454188
+--    330       56651             7      510839
+--    340       56651             7      510839
+--    350       56651             7      510839
+--    360       56651             7      510839
+--    370       53077             8      563916
+--    380       53077             8      563916
+--    390       53077             8      563916
+--    400       53077             8      563916
+--    410       48242             9      612158
+--    420       48242             9      612158
+--    430       48242             9      612158
+--    440       45397            10      657555
+--    450       45397            10      657555
+--    460       45397            10      657555
+--    470       44974            11      702529
+--    480       44974            11      702529
+--    490       44974            11      702529
+--    500       44974            11      702529
+--    510       44214            12      746743
+--    520       44214            12      746743
+--    530       44214            12      746743
+--    540       43017            13      789760
+--    550       43017            13      789760
+--    560       43017            13      789760
+--    570       42795            14      832555
+--    580       42795            14      832555
+--    590       42795            14      832555
+--    600       42078            15      874633
+--    610       42078            15      874633
+--    620       42078            15      874633
+--    630       41580            16      916213
+--    640       41580            16      916213
+--    650       41580            16      916213
+--    660       41528            17      957741
+--    670       41528            17      957741
+--    680       41528            17      957741
+--    690       39897            18      997638
+--    700       39897            18      997638
+--    710       39897            18      997638
+--    720       39719            19     1037357
+--    730       39719            19     1037357
+--    740       39719            19     1037357
+--    750       38549            20     1075906
+--    760       38549            20     1075906
+--    770       38496            21     1114402
+--    780       38496            21     1114402
+--    790       38496            21     1114402
+--    800       38056            22     1152458
+--    810       38056            22     1152458
+--    820       38056            22     1152458
+--    830       37627            23     1190085
+--    840       37627            23     1190085
+--    850       37627            23     1190085
+--    860       37600            24     1227685
+--    870       37600            24     1227685
+--    880       37192            25     1264877
+--    890       37192            25     1264877
+--    900       37192            25     1264877
+--    910       37062            26     1301939
+--    920       37062            26     1301939
+--    930       36952            27     1338891
+--    940       36952            27     1338891
+--    950       36952            27     1338891
+--    960       36924            28     1375815
+--    970       36924            28     1375815
+--    980       36924            28     1375815
+--    990       36865            29     1412680
+--    000       36865            29     1412680
+--    010       36750            30     1449430
+--    020       36750            30     1449430
+--    030       36750            30     1449430
+--    040       36413            31     1485843
+--    050       36413            31     1485843
+--    060       36413            31     1485843
+--    070       36205            32     1522048
+--    080       36205            32     1522048
+--    090       36171            33     1558219
+--    100       36171            33     1558219
+--    110       36171            33     1558219
+--    120       36135            34     1594354
+--    130       36135            34     1594354
+--    140       36038            35     1630392
+--    150       36038            35     1630392
+--    160       36038            35     1630392
+--    170       36032            36     1666424
+--    180       36032            36     1666424
+--    190       36032            36     1666424
+--    200       35830            37     1702254
+--    210       35830            37     1702254
+--    220       35794            38     1738048
+--    230       35794            38     1738048
+--    240       35794            38     1738048
+--    250       35726            39     1773774
+--    260       35726            39     1773774
+--    270       35593            40     1809367
+--    280       35593            40     1809367
+--    290       35593            40     1809367
+--    300       35593            41     1844960
+--    310       35593            41     1844960
+--    320       35569            42     1880529
+--    330       35569            42     1880529
+--    340       35569            42     1880529
+--    350       35549            43     1916078
+--    360       35549            43     1916078
+--    370       35319            44     1951397
+--    380       35319            44     1951397
+--    390       35319            44     1951397
+--    400       35261            45     1986658
+--    410       35261            45     1986658
+--    420       35254            46     2021912
+--    430       35254            46     2021912
+--    440       35254            46     2021912
+--    450       35069            47     2056981
+--    460       35069            47     2056981
+--    470       35068            48     2092049
+--    480       35068            48     2092049
+--    490       35068            48     2092049
+--    500       34929            49     2126978
+--    510       34929            49     2126978
+--    520       34847            50     2161825
+--    530       34847            50     2161825
+--    540       34847            50     2161825
+--    550       34737            51     2196562
+--    560       34737            51     2196562
+--    570       34679            52     2231241
+--    580       34679            52     2231241
+--    590       34679            52     2231241
+--    600       34619            53     2265860
+--    610       34619            53     2265860
+--    620       34512            54     2300372
+--    630       34512            54     2300372
+--    640       34512            54     2300372
+--    650       34492            55     2334864
+--    660       34492            55     2334864
+--    670       34490            56     2369354
+--    680       34490            56     2369354
+--    690       34490            56     2369354
+--    700       34483            57     2403837
+--    710       34483            57     2403837
+--    720       34411            58     2438248
+--    730       34411            58     2438248
+--    740       34411            58     2438248
+--    750       34230            59     2472478
+--    760       34230            59     2472478
+--    770       34197            60     2506675
+--    780       34197            60     2506675
+--    790       34197            60     2506675
+--    800       34172            61     2540847
+--    810       34172            61     2540847
+--    820       34154            62     2575001
+--    830       34154            62     2575001
+--    840       34132            63     2609133
+--    850       34132            63     2609133
+--    860       34132            63     2609133
+--    870       34061            64     2643194
+--    880       34061            64     2643194
+--    890       33925            65     2677119
+--    900       33925            65     2677119
+--    910       33925            65     2677119
+--    920       33864            66     2710983
+--    930       33864            66     2710983
+--    940       33685            67     2744668
+--    950       33685            67     2744668
+--    960       33685            67     2744668
+--    970       33678            68     2778346
+--    980       33678            68     2778346
+--    990       33659            69     2812005
+--    000       33659            69     2812005
+--    010       33642            70     2845647
+--    020       33642            70     2845647
+--    030       33642            70     2845647
+--    040       33625            71     2879272
+--    050       33625            71     2879272
+--    060       33549            72     2912821
+--    070       33549            72     2912821
+--    080       33549            72     2912821
+--    090       33440            73     2946261
+--    100       33440            73     2946261
+--    110       33410            74     2979671
+--    120       33410            74     2979671
+--    130       33260            75     3012931
+--    140       33260            75     3012931
+--    150       33260            75     3012931
+--    160       33225            76     3046156
+--    170       33225            76     3046156
+--    180       33076            77     3079232
+--    190       33076            77     3079232
+--    200       33049            78     3112281
+--    210       33049            78     3112281
+--    220       33049            78     3112281
+--    230       33034            79     3145315
+--    240       33034            79     3145315
+--    250       33002            80     3178317
+--    260       33002            80     3178317
+--    270       33002            80     3178317
+--    280       33001            81     3211318
+--    290       33001            81     3211318
+--    300       32882            82     3244200
+--    310       32882            82     3244200
+--    320       32862            83     3277062
+--    330       32862            83     3277062
+--    340       32862            83     3277062
+--    350       32841            84     3309903
+--    360       32841            84     3309903
+--    370       32808            85     3342711
+--    380       32808            85     3342711
+--    390       32777            86     3375488
+--    400       32777            86     3375488
+--    410       32777            86     3375488
+--    420       32717            87     3408205
+--    430       32717            87     3408205
+--    440       32715            88     3440920
+--    450       32715            88     3440920
+--    460       32704            89     3473624
+--    470       32704            89     3473624
+--    480       32704            89     3473624
+--    490       32575            90     3506199
+--    500       32575            90     3506199
+--    510       32434            91     3538633
+--    520       32434            91     3538633
+--    530       32390            92     3571023
+--    540       32390            92     3571023
+--    550       32390            92     3571023
+--    560       32289            93     3603312
+--    570       32289            93     3603312
+--    580       32266            94     3635578
+--    590       32266            94     3635578
+--    600       32237            95     3667815
+--    610       32237            95     3667815
+--    620       32227            96     3700042
+--    630       32227            96     3700042
+--    640       32227            96     3700042
+--    650       32211            97     3732253
+--    660       32211            97     3732253
+--    670       32142            98     3764395
+--    680       32142            98     3764395
+--    690       32080            99     3796475
+--    700       32080            99     3796475
+--    710       32080            99     3796475
+--    720       32072           100     3828547
+--    730       32072           100     3828547
+--    740       32062           101     3860609
+--    750       32062           101     3860609
+--    760       31952           102     3892561
+--    770       31952           102     3892561
+--    780       31952           102     3892561
+--    790       31949           103     3924510
+--    800       31949           103     3924510
+--    810       31919           104     3956429
+--    820       31919           104     3956429
+--    830       31830           105     3988259
+--    840       31830           105     3988259
+--    850       31771           106     4020030
+--    860       31771           106     4020030
+--    870       31771           106     4020030
+--    880       31738           107     4051768
+--    890       31738           107     4051768
+--    900       31711           108     4083479
+--    910       31711           108     4083479
+--    920       31699           109     4115178
+--    930       31699           109     4115178
+--    940       31695           110     4146873
+--    950       31695           110     4146873
+--    960       31695           110     4146873
+--    970       31682           111     4178555
+--    980       31682           111     4178555
+--    990       31622           112     4210177
+--    000       31622           112     4210177
+--    010       31597           113     4241774
+--    020       31597           113     4241774
+--    030       31552           114     4273326
+--    040       31552           114     4273326
+--    050       31552           114     4273326
+--    060       31502           115     4304828
+--    070       31502           115     4304828
+--    080       31491           116     4336319
+--    090       31491           116     4336319
+--    100       31479           117     4367798
+--    110       31479           117     4367798
+--    120       31395           118     4399193
+--    130       31395           118     4399193
+--    140       31395           118     4399193
+--    150       31375           119     4430568
+--    160       31375           119     4430568
+--    170       31343           120     4461911
+--    180       31343           120     4461911
+--    190       31261           121     4493172
+--    200       31261           121     4493172
+--    210       31138           122     4524310
+--    220       31138           122     4524310
+--    230       31138           122     4524310
+--    240       31015           123     4555325
+--    250       31015           123     4555325
+--    260       30949           124     4586274
+--    270       30949           124     4586274
+--    280       30921           125     4617195
+--    290       30921           125     4617195
+--    300       30881           126     4648076
+--    310       30881           126     4648076
+--    320       30881           126     4648076
+--    330       30867           127     4678943
+--    340       30867           127     4678943
+--    350       30864           128     4709807
+--    360       30864           128     4709807
+--    370       30846           129     4740653
+--    380       30846           129     4740653
+--    390       30712           130     4771365
+--    400       30712           130     4771365
+--    410       30590           131     4801955
+--    420       30590           131     4801955
+--    430       30554           132     4832509
+--    440       30554           132     4832509
+--    450       30554           132     4832509
+--    460       30540           133     4863049
+--    470       30540           133     4863049
+--    480       30391           134     4893440
+--    490       30391           134     4893440
+--    500       30228           135     4923668
+--    510       30228           135     4923668
+--    520       30213           136     4953881
+--    530       30213           136     4953881
+--    540       30089           137     4983970
+--    550       30089           137     4983970
+--    560       30054           138     5014024
+--    570       30054           138     5014024
+--    580       30054           138     5014024
+--    590       30044           139     5044068
+--    600       30044           139     5044068
+--    610       29987           140     5074055
+--    620       29987           140     5074055
+--    630       29980           141     5104035
+--    640       29980           141     5104035
+--    650       29973           142     5134008
+--    660       29973           142     5134008
+--    670       29900           143     5163908
+--    680       29900           143     5163908
+--    690       29821           144     5193729
+--    700       29821           144     5193729
+--    710       29758           145     5223487
+--    720       29758           145     5223487
+--    730       29758           145     5223487
+--    740       29756           146     5253243
+--    750       29756           146     5253243
+--    760       29690           147     5282933
+--    770       29690           147     5282933
+--    780       29648           148     5312581
+--    790       29648           148     5312581
+--    800       29590           149     5342171
+--    810       29590           149     5342171
+--    820       29440           150     5371611
+--    830       29440           150     5371611
+--    840       29372           151     5400983
+--    850       29372           151     5400983
+--    860       29318           152     5430301
+--    870       29318           152     5430301
+--    880       29185           153     5459486
+--    890       29185           153     5459486
+--    900       28983           154     5488469
+--    910       28983           154     5488469
+--    920       28983           154     5488469
+--    930       28903           155     5517372
+--    940       28903           155     5517372
+--    950       28684           156     5546056
+--    960       28684           156     5546056
+--    970       28549           157     5574605
+--    980       28549           157     5574605
+--    990       28209           158     5602814
+--    000       28209           158     5602814
+--    010       28102           159     5630916
+--    020       28102           159     5630916
+--    030       27592           160     5658508
+--    040       27592           160     5658508
+--    050       27585           161     5686093
+--    060       27585           161     5686093
+--    070       27415           162     5713508
+--    080       27415           162     5713508
+--    090       26965           163     5740473
+--    100       26965           163     5740473
+--    110       26945           164     5767418
+--    120       26939           165     5794357
+--    130       26939           165     5794357
+--    140       26852           166     5821209
+--    150       26852           166     5821209
+--    160       26537           167     5847746
+--    170       26537           167     5847746
+--    180       26507           168     5874253
+--    190       26507           168     5874253
+--    200       26344           169     5900597
+--    210       26344           169     5900597
+--    220       25531           170     5926128
+--    230       25531           170     5926128
+--    240       24860           171     5950988
+--    250       24860           171     5950988
+--    260       24726           172     5975714
+--    270       23963           173     5999677
+--    280       23963           173     5999677
+--    290       23749           174     6023426
+--    300       23749           174     6023426
+--    310       21468           175     6044894
+--    320       20652           176     6065546
+--    330       20652           176     6065546
+--    340       20182           177     6085728
+--    350       13570           178     6099298
+--
+-- Finished stage 'consensusLoad', reset canuIteration.
+----------------------------------------
+-- Starting command on Tue Nov 15 14:57:19 2022 with 13439.702 GB free disk space
+
+    cd .
+    /public/groups/meyerlab/software/canu-2.2/bin/tgStoreDump \
+      -S ./dittrichia_chloroplast_asm.seqStore \
+      -T ./unitigging/dittrichia_chloroplast_asm.ctgStore 2 \
+      -o ./dittrichia_chloroplast_asm.contigs \
+      -layout \
+    > ./dittrichia_chloroplast_asm.contigs.layout.err 2>&1
+
+-- Finished on Tue Nov 15 14:57:21 2022 (2 seconds) with 13439.702 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Tue Nov 15 14:57:21 2022 with 13439.702 GB free disk space
+
+    cd .
+    /public/groups/meyerlab/software/canu-2.2/bin/tgStoreDump \
+      -S ./dittrichia_chloroplast_asm.seqStore \
+      -T ./unitigging/dittrichia_chloroplast_asm.ctgStore 2 \
+      -consensus -fasta \
+      -unassembled \
+    > ./dittrichia_chloroplast_asm.unassembled.fasta
+    2> ./dittrichia_chloroplast_asm.unassembled.err
+
+-- Finished on Tue Nov 15 14:57:24 2022 (3 seconds) with 13439.676 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Tue Nov 15 14:57:24 2022 with 13439.676 GB free disk space
+
+    cd .
+    /public/groups/meyerlab/software/canu-2.2/bin/tgStoreDump \
+      -S ./dittrichia_chloroplast_asm.seqStore \
+      -T ./unitigging/dittrichia_chloroplast_asm.ctgStore 2 \
+      -consensus -fasta \
+      -contigs \
+    > ./dittrichia_chloroplast_asm.contigs.fasta
+    2> ./dittrichia_chloroplast_asm.contigs.err
+
+-- Finished on Tue Nov 15 14:57:27 2022 (3 seconds) with 13439.669 GB free disk space
+----------------------------------------
+-- Finished stage 'generateOutputs', reset canuIteration.
+--
+-- Assembly 'dittrichia_chloroplast_asm' finished in '/public/groups/meyerlab/ditt/organelle/canu/ditt_canu_hifi3'.
+--
+-- Summary saved in 'dittrichia_chloroplast_asm.report'.
+--
+-- Sequences saved:
+--   Contigs       -> 'dittrichia_chloroplast_asm.contigs.fasta'
+--   Unassembled   -> 'dittrichia_chloroplast_asm.unassembled.fasta'
+--
+-- Read layouts saved:
+--   Contigs       -> 'dittrichia_chloroplast_asm.contigs.layout'.
+--
+-- Bye.

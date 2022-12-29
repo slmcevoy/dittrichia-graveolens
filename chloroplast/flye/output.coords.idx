@@ -1,0 +1,11 @@
+#ref
+ref,ref_length,matching_queries
+NC_066031.1,151261,edge_137-_edge_63+_edge_138-_edge_63-(circular)
+#query
+query,query_length,orientation,bytePosition_unique,bytePosition_repetitive,bytePosition_end,unique_matching_refs,matching_refs
+edge_137-_edge_63+_edge_138-_edge_63-(circular),151013,+,44,86,138,NC_066031.1,NC_066031.1
+#overview
+ref_start,ref_end,query_start,query_end,ref,query,tag
+1,151257,9,151012,NC_066031.1,edge_137-_edge_63+_edge_138-_edge_63-(circular),unique
+82940,107856,151012,126069,NC_066031.1,edge_137-_edge_63+_edge_138-_edge_63-(circular),repetitive
+126355,151257,107657,82729,NC_066031.1,edge_137-_edge_63+_edge_138-_edge_63-(circular),repetitive
