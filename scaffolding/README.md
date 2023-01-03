@@ -9,15 +9,15 @@ Draft assemblies were scaffolded as described in the Genome Assembly Cookbook av
 Originally, I scaffolded the draft assemblies, primary and alternate, that were created with the contaminant-filtered reads.  After attempting to assemble the chloroplast, I realized some chloroplast sequence had been filtered out as contaminant.  I reassembled draft assemblies using the reads before this filtering step and these scaffolded assemblies were more complete.  
 
 Archived files from final draft assemblies:  
-/redser4/projects/dittrichia/scaffolding/primary  
-/redser4/projects/dittrichia/scaffolding/alternate  
+/redser4/genomes/Dittrichia_graveolens/dittrichia_primary_genome.fasta.gz
+/redser4/genomes/Dittrichia_graveolens/dittrichia_alternate_genome.fasta.gz
 
 Archived files from unused contaminant filtered draft assemblies:  
 /redser4/projects/dittrichia/scaffolding/unused-contamfilt  
 
 Scripts and small output files from all assemblies  are provided in the directories above.  
 
-Scaffolding teps:  
+Scaffolding steps:  
 
 1. Prepare BWA (v0.7.17-r1188) index for alignment and genome index (.fai, samtools v1.16.1) and coordinates file (.genome).  
 prealignment.sh  
@@ -79,3 +79,5 @@ Scripts: assembly_evaluation/meryl.sh assembly_evaluation/default/merqury.sh
 
 
 ### Scaffold renaming
+
+Script: rename.sh 
