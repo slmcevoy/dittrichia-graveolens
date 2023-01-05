@@ -1,5 +1,7 @@
 ## Genome Assemblies
 
+[Draft assembly tracking google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)  
+
 ### HiFiasm
 
 The directories above contain four different HiFiasm assemblies (v0.16.1-r375) which are described below. In each directory, there is a script called hifiasm.sh which is the command to assemble. 
@@ -13,15 +15,17 @@ Full output and QC files archived in: /redser4/projects/dittrichia/assemblies/ho
 
 #### Test draft assemblies  
 Created with adapter- and contaminant-filtered reads.  
-1. default - Testing the default parameters. This produces a haploid consensus assembly plus assemblies for each haplotype (hap1 and hap2).     
-2. homozygous - testing the -l0 parameter which can be used for homozygous genomes and skips the post-assembly haplotype filtering/organization seen in the default run. Normally this filtering is used to find undercollapsed haplotypes, where copies from both parents have been assembled into separate regions instead of collapsed into a consensus. A consensus haploid assembly plus a file with alternative haplotypes is produced.  The alternative haplotypes are fewer than in default, where haplotype organization helps expand the alternate.
-3. homozygousomnic - in addition to -l0, this uses --h1 and --h2 to add omni-c reads.  In this situation, the omni-c reads are used to phase the haplotypes, meaning to organize them by haploid assembly instead of a collapsed consensus (hap1 and hap2). All contigs in a chromosome should end up in the same parental haplotype. Contigs within the same chromosome can be phased (organized by haplotype) consistently, but there is no way to phase chromosomes themselves without parent information.  
+1. hifiasm/default - Testing the default parameters. This produces a haploid consensus assembly plus assemblies for each haplotype (hap1 and hap2).     
+2. hifiasm/homozygous - testing the -l0 parameter which can be used for homozygous genomes and skips the post-assembly haplotype filtering/organization seen in the default run. Normally this filtering is used to find undercollapsed haplotypes, where copies from both parents have been assembled into separate regions instead of collapsed into a consensus. A consensus haploid assembly plus a file with alternative haplotypes is produced.  The alternative haplotypes are fewer than in default, where haplotype organization helps expand the alternate.
+3. hifiasm/homozygousomnic - in addition to -l0, this uses --h1 and --h2 to add omni-c reads.  In this situation, the omni-c reads are used to phase the haplotypes, meaning to organize them by haploid assembly instead of a collapsed consensus (hap1 and hap2). All contigs in a chromosome should end up in the same parental haplotype. Contigs within the same chromosome can be phased (organized by haplotype) consistently, but there is no way to phase chromosomes themselves without parent information.  
 
 The full set of files including output data has been compressed and stored on redser4:
 
 1. /redser4/projects/dittrichia/assemblies/default/dittrichia_hifiasm_default.tar.gz
 2. /redser4/projects/dittrichia/assemblies/homozygous/dittrichia_hifiasm_homozygous.tar.gz
 3. /redser4/projects/dittrichia/assemblies/homozygousomnic/dittrichia_hifiasm_homozygousomnic.tar.gz
+*BEST draft primary assembly*  
+4. /redser4/projects/dittrichia/assemblies/hom_omnic_adapterfilt/hom_omnic_adapterfilt.tar.gz
 
 ### Draft assembly chloroplast filtering  
 
@@ -35,7 +39,7 @@ The filtered assemblies were QC'd with BUSCO and Quast for final contig statisti
 Scripts: chloroplast_check/quast.sh, busco.sh  
 Output: chloroplast_check/quast_hap1, quast_hap2, busco_hap1_o, busco_hap2_o   
 
-Draft fasta archived in /redser4/projects/dittrichia/reads/hifi/chloroplast_check/  
+Final Draft fasta archived in /redser4/projects/dittrichia/reads/hifi/chloroplast_check/  
 
 ### Assembly QC  
 

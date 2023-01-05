@@ -47,6 +47,7 @@ YAGCloser (commit 0e34c3b) was used with HiFi reads.  One gap was closed in the 
 Assemblies and other output archived in /redser4/projects/dittrichia/gapclosing/adapterfilt-default  
 
 The 3ddna-0rounds assembly did not have any closed gaps, but the scripts and output are archived: /redser4/projects/dittrichia/gapclosing/unused-0rounds  
+
 The original contaminant-filtered assemblies are in: /redser4/projects/dittrichia/gapclosing/unused-contamfiltered  
 
 ### Mitochondrial sequence filtering
@@ -61,6 +62,8 @@ filterFasta.sh
 
 [Alignment google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=2020405914)  
 [Merqury google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1688699288)  
+
+The 'adapterfilt-default' assembly proved to be slightly better than 'adapterfilt-0rounds' and both of these are more complete than 'contamfilt' according to the methods below.  
 
 Each assembly directory above also contains scripts used to evaluate the assembly and their report output.
 Side by side stats comparisons are in the [Dittrichia tracking google sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)
