@@ -18,15 +18,22 @@
 
 ### Final Assembly 
 
-[Assembly trial results](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)  
 [Draft assembly trials](assemblies/) - hifiasm tests, chloroplast scaffold removal  
 [Final assemblies](scaffolding/) - scaffolding trials, gap closing, header renaming  
 
+ *Primary assembly*  
  Total length: 835 Mbp  
- Pseudomolecules: 98.1% seq organized into 9  
+ Pseudomolecules: 98.1% sequence organized into 9  
  Number of scaffolds: 261  
  N50: 96.9 Mb  
- BUSCO: C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%   
+ BUSCO embryophyta_odb10: C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%   
+
+ *Alternate assembly*  
+ Total length: 824 Mbp  
+ Pseudomolecules: 97.8% sequence organized into 9  
+ Number of scaffolds: 292  
+ N50: 96.4 Mb  
+ BUSCO embryophyta_odb10: C:98.6%[S:95.7%,D:2.9%],F:0.6%,M:0.8%  
 
 #### Organelle genomes
 
