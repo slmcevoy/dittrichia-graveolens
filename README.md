@@ -12,27 +12,24 @@
 
 ### Sequencing
 
-[HiFi raw and filtered summaries](sequencing/hifi/) - Using 831 Mbp as the genomize size, raw read coverage is 41x and there is 40x after filtering contaminants.
+[HiFi raw and filtered summaries](sequencing/hifi/) - Using 835 Mbp as the genomize size, raw read coverage is 41x.
 
-Omni-C summaries coming...
+[Omni-C summaries](sequencing/omnic) - 5 libraries for a total of 15x read coverage
 
-### Assembly
-
-#### HiFiasm draft assembly 
+### Final Assembly 
 
 [Assembly trial results](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=234257980)  
+[Draft assembly trials](assemblies/) - hifiasm tests, chloroplast scaffold removal  
+[Final assemblies](scaffolding/) - scaffolding trials, gap closing, header renaming  
 
-Total length: 819 Mbp  
- Number of contigs: 36  
- N50: 74 Mb  
- BUSCO: C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%  
+ Total length: 835 Mbp  
+ Pseudomolecules: 98.1% seq organized into 9  
+ Number of scaffolds: 261  
+ N50: 96.9 Mb  
+ BUSCO: C:98.8%[S:95.9%,D:2.9%],F:0.6%,M:0.6%   
 
-#### Chloroplast filtering of draft
+#### Organelle genomes
 
-[Tracking sheet](https://docs.google.com/spreadsheets/d/10WpqEDbLMlsCtp8gftFsXScPKQhTrrIB8Kh8VTkQy2g/edit#gid=1445097887)  
+[Chloroplast genome](chloroplast/)
+[Mitochondrial genome](mitochondria)
 
-Chloroplast assembly currently at 4 contigs.  Contig 36 removed from draft nuclear assembly most of its 90k bp were chloroplast.
-
-#### Scaffolding
-
-In progress...
